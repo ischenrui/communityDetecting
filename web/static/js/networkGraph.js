@@ -236,6 +236,8 @@ function updateData(data) {
     setNetworkInfo(data);
     drawNetworkGraph(data);
     drawBarChart(data);
+    // 设置分析结果
+    setResultInfo(data.results);
 }
 
 
@@ -243,12 +245,13 @@ function setNetworkInfo(data) {
     var network_info = d3.select("#network-info");
     network_info.selectAll(".info").remove();
     network_info.append("p")
-        .attr("class", "info")
-        .text("节点数目：" + data.nodes.length);
+    .attr("class", "info")
+    .text("节点数目：" + data.nodes.length);
     network_info.append("p")
-        .attr("class", "info")
-        .text("关系数目：" + data.links.length);
+    .attr("class", "info")
+    .text("关系数目：" + data.links.length);
 }
+
 
 
 function drawNetworkGraph(data) {
@@ -259,8 +262,8 @@ function drawNetworkGraph(data) {
     if (NETWORKCONFIG.layout === 0) {
         linkForce.strength(NETWORKCONFIG.link_strength);
         simulation.alpha(1)
-            .alphaDecay(0.002)
-            .alphaMin(0.002)
+        .alphaDecay(0.002)
+        .alphaMin(0.002)
             .force("r", null)
             .force("charge", d3.forceManyBody().strength(NETWORKCONFIG.node_charge).distanceMax(400))
             .force("center", d3.forceCenter((window.innerWidth - 30) / 2, (window.innerHeight - 30) / 2))
@@ -274,78 +277,78 @@ function drawNetworkGraph(data) {
         })
         linkForce.strength(0);
         simulation.force("charge", d3.forceCollide().radius(NETWORKCONFIG.node_size * 1.5))
-            .force("r", d3.forceRadial(300, (window.innerWidth - 30) / 2, (window.innerHeight - 30) / 2))
-            .alpha(5)
-            .alphaDecay(0.1)
+        .force("r", d3.forceRadial(300, (window.innerWidth - 30) / 2, (window.innerHeight - 30) / 2))
+        .alpha(5)
+        .alphaDecay(0.1)
             .alphaMin(0.02);
-    }
-    
-
-    // 连线对象
-    link_elements = link_layout.selectAll("path")
+        }
+        
+        
+        // 连线对象
+        link_elements = link_layout.selectAll("path")
         .data(data.links);
-    link_elements.exit().remove();
-    link_elements = link_elements.enter()
+        link_elements.exit().remove();
+        link_elements = link_elements.enter()
         .append("path")
         .attr("class", "link")
         .merge(link_elements)
         .attr("id", function(link, i){ return "link-" + i; })
         .on("mousedown.select-link", selectLink)
         .on("mouseover.hover-link", hoverLink);
-
-    // 连线的文字
+        
+        // 连线的文字
     link_text_elements = text_layout.selectAll("text")
-        .data(data.links);
+    .data(data.links);
     link_text_elements.exit().remove();
     link_text_elements = link_text_elements.enter()
-        .append("text")
-        .attr("class", "link-text")
+    .append("text")
+    .attr("class", "link-text")
         .style("font-size", 10)
         .merge(link_text_elements)
         .style("display", SHOWCONFIG.link_text == true ? "block" : "none");
-    link_text_elements.selectAll("textPath").remove();
-    link_text_elements.append("textPath")
+        link_text_elements.selectAll("textPath").remove();
+        link_text_elements.append("textPath")
         .attr("xlink:href", function (link, i) { return "#link-" + i; })
         .text(function(link) { return link.label; });
-
-    // 节点对象
-    node_elements = node_layout.selectAll(".node")
+        
+        // 节点对象
+        node_elements = node_layout.selectAll(".node")
         .data(data.nodes);
-    node_elements.exit().remove();
-    node_elements = node_elements.enter()
+        node_elements.exit().remove();
+        node_elements = node_elements.enter()
         .append("g")
         .attr("class", "node")
         .merge(node_elements)
         .on("mousedown.select-node", selectNode)
         .on("mouseover.hover-link", hoverNode)
         .call(d3.drag()
-            .on("start", drag_start)
-            .on("drag", draging)
-            .on("end", drag_end));
-    node_elements.selectAll("text").remove();
+        .on("start", drag_start)
+        .on("drag", draging)
+        .on("end", drag_end));
+        node_elements.selectAll("text").remove();
     node_elements.selectAll("circle").remove();
     node_elements.append("circle")
-        .attr("r", NETWORKCONFIG.node_size);
+    .attr("r", NETWORKCONFIG.node_size);
     node_elements.append("text")
-        .attr("class", "node-text")
-        .attr("dy", ".35em")
+    .attr("class", "node-text")
+    .attr("dy", ".35em")
         .attr("x", function (node) {
             return textBreaking(d3.select(this), node.name);
         })
         .style("display", SHOWCONFIG.node_text === true ? "block" : "none");
-    node_elements.filter(function(node) { return node.border === true; })
+        node_elements.filter(function(node) { return node.border === true; })
         .append("text")
         .attr("class", "tip")
         .attr("transform", "translate(15, -15)")
         .text("x");
-    fill_circle();
-
+        fill_circle();
+        
     simulation.nodes(data.nodes)
-        .on("tick", tick)
-        .force("link")
-        .links(data.links);
+    .on("tick", tick)
+    .force("link")
+    .links(data.links);
     simulation.restart();
-
+    
     // 绑定右键菜单
     $(".node").smartMenu(node_menu, {
         name: "node_menu"
@@ -354,6 +357,29 @@ function drawNetworkGraph(data) {
         name: "link_menu"
     });
 }
+
+function setResultInfo(results){
+    if(results == undefined){
+        console.log(123);
+        return;
+    }
+    console.log(results);
+
+    var result_info = d3.select("#result-info");
+    result_info.selectAll(".info").remove();
+    for (var i in results) {
+        var item = results[i];
+        if (item.title){
+            result_info.append("strong")
+            .attr("class", "info")
+            .text(item.title + " : ");
+        }
+        result_info.append("p")
+        .attr("class", "info")
+        .text(item.msg);
+    }
+}
+
 
 $("#container").smartMenu(create_menu, {
     name: "create_menu"

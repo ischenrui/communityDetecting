@@ -49,17 +49,8 @@ def index():
 def upload_file():
 	file_info = request.files["file"]
 	code = request.form["code"]
-	print("*" * 80)
-	print(file_info)
-	try:
-		with open(file_info, "r") as f:
-			print(f.read())
-	except Exception as e:
-		print("error to open file")
-
 	print(code)
-	print("#" * 80)
-	
+
 	data = {
 		"nodes": [
 			{"id": 0, "name": "孙晓丹", "code": "0805", "school": "清华大学", "insititution": "材料学院", "label": "杰青"}, 
