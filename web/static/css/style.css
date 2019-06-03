@@ -204,7 +204,9 @@ ul,ol{
     border: 1px solid #ccc;
     bottom: 0;
 }
-
+#route-box{
+    top: 60px;
+}
 #setting-box{
     top: 60px;
     border-collapse: collapse;
