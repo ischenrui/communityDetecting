@@ -400,7 +400,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 35px;
     margin: 7px;
 }
-/* #sline-button {
+#sline-button {
     background-image: url("../images/sline.png");
     background-size: cover;
 }
@@ -415,7 +415,7 @@ input[type="range"]::-webkit-slider-thumb {
 #vline-button {
     background-image: url("../images/vline.png");
     background-size: cover;
-} */
+}
 .layout-switch {
     float: left;
     width: 30%;
