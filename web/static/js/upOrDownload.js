@@ -46,7 +46,7 @@ d3.select("#select-file")
 d3.select("#file-input")
 	.on("input propertychange", function() {
 		d3.select("#file-name").text(this.value);
-		d3.select("file-state").text("等待上传");
+		d3.select("#file-state").text("等待上传");
 	})
 
 // 确认上传
@@ -65,12 +65,14 @@ d3.select("#upload-button")
             contentType: false,
             processData: false,
             success: function(cur_data) {
-                console.log(cur_data);
+                // console.log(cur_data);
                 data = JSON.parse(cur_data);
                 updateData(data);
+                // 关闭上传框
                 d3.select("#upload-layout").style("display", "none");
+                // 清空待上传文件信息
                 d3.select("#file-name").text(this.value);
-                d3.select("file-state").text("等待上传");
+                d3.select("#file-state").text("上传成功");
             },
             error: function() {
                 alert("数据上传失败！");

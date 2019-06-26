@@ -71,13 +71,13 @@ d3.select("#link-button")
     });
 
 // 箭头显示开关
-d3.select("#marker-button")
-    .on("click", function() {
-        d3.select(this).classed("active", SHOWCONFIG.marker = !SHOWCONFIG.marker);
-        network_graph.select("marker")
-            .select("path")
-            .style("display", SHOWCONFIG.marker === true ? "block" : "none");
-    });
+// d3.select("#marker-button")
+//     .on("click", function() {
+//         d3.select(this).classed("active", SHOWCONFIG.marker = !SHOWCONFIG.marker);
+//         network_graph.select("marker")
+//             .select("path")
+//             .style("display", SHOWCONFIG.marker === true ? "block" : "none");
+//     });
 
 
 // 分析结果显示开关

@@ -65,7 +65,7 @@ var node_menu = [
                     .style("opacity", "0")
                     .attr("x1", node_data.x)
                     .attr("y1", node_data.y)
-                    .attr("marker-end", "url(#resolved)");
+                    // .attr("marker-end", "url(#resolved)");
                 container.on("mousemove.add-link", function() {
                     translate_scale_rotate = getTranslateAndScaleAndRotate("#network-graph");
                     scale = translate_scale_rotate.k;
@@ -230,7 +230,7 @@ var simulation = d3.forceSimulation()
     });
 
 // 更新数据
-updateData(data);
+// updateData(data);
 
 function updateData(data) {
     setNetworkInfo(data);
@@ -265,8 +265,8 @@ function drawNetworkGraph(data) {
         .alphaDecay(0.002)
         .alphaMin(0.002)
             .force("r", null)
-            .force("charge", d3.forceManyBody().strength(NETWORKCONFIG.node_charge).distanceMax(400))
-            .force("center", d3.forceCenter((window.innerWidth - 30) / 2, (window.innerHeight - 30) / 2))
+            .force("charge", d3.forceManyBody().strength(NETWORKCONFIG.node_charge).distanceMax(300))
+            .force("center", d3.forceCenter((window.innerWidth - 250) / 2, (window.innerHeight - 60) / 2))
             .force("collision", d3.forceCollide(NETWORKCONFIG.node_size));
     }
     // 圆形布局
@@ -277,26 +277,26 @@ function drawNetworkGraph(data) {
         })
         linkForce.strength(0);
         simulation.force("charge", d3.forceCollide().radius(NETWORKCONFIG.node_size * 1.5))
-        .force("r", d3.forceRadial(300, (window.innerWidth - 30) / 2, (window.innerHeight - 30) / 2))
+        .force("r", d3.forceRadial(300, (window.innerWidth - 250) / 2, (window.innerHeight - 60) / 2))
         .alpha(5)
         .alphaDecay(0.1)
-            .alphaMin(0.02);
-        }
+        .alphaMin(0.02);
+    }
         
         
-        // 连线对象
-        link_elements = link_layout.selectAll("path")
-        .data(data.links);
-        link_elements.exit().remove();
-        link_elements = link_elements.enter()
-        .append("path")
-        .attr("class", "link")
-        .merge(link_elements)
-        .attr("id", function(link, i){ return "link-" + i; })
-        .on("mousedown.select-link", selectLink)
-        .on("mouseover.hover-link", hoverLink);
-        
-        // 连线的文字
+    // 连线对象
+    link_elements = link_layout.selectAll("path")
+    .data(data.links);
+    link_elements.exit().remove();
+    link_elements = link_elements.enter()
+    .append("path")
+    .attr("class", "link")
+    .merge(link_elements)
+    .attr("id", function(link, i){ return "link-" + i; })
+    .on("mousedown.select-link", selectLink)
+    .on("mouseover.hover-link", hoverLink);
+    
+    // 连线的文字
     link_text_elements = text_layout.selectAll("text")
     .data(data.links);
     link_text_elements.exit().remove();
@@ -360,10 +360,8 @@ function drawNetworkGraph(data) {
 
 function setResultInfo(results){
     if(results == undefined){
-        console.log(123);
         return;
     }
-    console.log(results);
 
     var result_info = d3.select("#result-info");
     result_info.selectAll(".info").remove();
@@ -523,10 +521,10 @@ d3.select("#link-strength").on("input propertychange", function() {
 d3.select("#line-color").on("change", function() {
     d3.selectAll(".link")
         .style("stroke", this.value);
-    d3.select("marker")
-        .select("path")
-        .style("fill", this.value)
-        .style("stroke", this.value);
+    // d3.select("marker")
+    //     .select("path")
+    //     .style("fill", this.value)
+    //     .style("stroke", this.value);
 });
 
 // 关系线宽
@@ -553,38 +551,15 @@ layout_switch_buttons.on("click", function() {
     })
 
 function fill_circle() {
-    if (NETWORKCONFIG.special === true) {
-        node_elements.select("circle")
-            .style("fill", function(node) {
-                return (node.label != "undefined" && support_labels.indexOf(node.label) > -1) ? "url(#" + node.label + ")" : "url(#default)";
-            })
-            .style("stroke", function(node) {
-                if ("color" in node) {
-                    return node.color;
-                }
-                else {
-                    var color_index = support_labels.indexOf(node.label);
-                    node["color"] = color(color_index > -1 ? color_index : 0);
-                    return node.color;
-                }
-            });
-    }
-    else {
-        node_elements.select("circle")
-            .style("fill", function(node) {
-                if ("color" in node) {
-                    return node.color;
-                }
-                else {
-                    var color_index = support_labels.indexOf(node.label);
-                    node["color"] = color( color_index > -1 ? color_index : 0);
-                    return node.color;
-                }
-            })
-            .style("stroke", function(node) {
-                return "white";
-            });
-    }
+    node_elements.select("circle")
+        .style("fill", function(node,index) {
+            if(node.class !== undefined)
+                return color(node.class);
+            return color(index % 10);
+        })
+        .style("stroke", function(node) {
+            return "black";
+        });
 }
 
 // 节点拖拽
