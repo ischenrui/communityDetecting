@@ -2,3 +2,7 @@ db/*
 
 web/test.py
 web/app.py
+*/__pycache__
+web/uploads/*
+*/.vscode
+.idea

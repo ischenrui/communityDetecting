@@ -4,7 +4,7 @@ import time
 
 def get_json(g,community_data):
     data = {'nodes': [], 'edges': [] }
-    data['community_data'] = community_data
+    data['community_data'] = list(community_data)
     for node in g.vs:
         tnode = {}
         tnode['id'] = int(node['id'])
@@ -61,7 +61,7 @@ def get_community_data(g):
         label = g.vs['class'][i]
         if label in t_dic.keys():t_dic[label].append(i)
         else:t_dic[label] = [i]
-    out = {}
+    out, back = {}, []
     for k,v in t_dic.items():
         if len(v)>2:
             out[k] = {}
@@ -72,7 +72,8 @@ def get_community_data(g):
             out[k]['transity'] = round(nx.transitivity(nxg),4)  #传递性
             out[k]['cluster'] = round(cluster_coefficient(nxg),4) #聚集系数
         else:out[k] = {'density':0,'transity':0,'cluster':0}
-    return out
+        back.append({k:out[k]})
+    return back
 
 def add_centrality(g):
     t_dic = {}
