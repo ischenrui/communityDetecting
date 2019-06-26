@@ -1,25 +1,51 @@
+// 用于记录本次选择的算法
+var ALG_LIST = [];
+//用于保存不同算法产生的值
+var DATA = {};
+// 保存条形图需要的社区间比较数据
+var BAR_GRAPH_DATA_COMMIUNITY = {};
+// 算法间比较数据
+var BAR_GRAPH_DATA_ALG = {};
+
+
+
 $("#result-list").on("click", (e)=>{
     let $target = $(e.target);
+    
+    if(!$target.attr("data-type")) return;
+
     let $bar_area = $("#bar_chart_container");
+
     if($target.hasClass("active")){
         $target.removeClass("active");
         $bar_area.attr("style","z-index:1");
     }else{
         $target.addClass("active").siblings("dt").removeClass("active");
-        $bar_area.attr("style","z-index:20");
+        
+        // "1" or "2"
+        if(hot_reload_bar_graph( $target.attr("data-type"))){
+            $bar_area.attr("style","z-index:20");
+        }      
+
     }
 });
 
+// 显示结果分析
 $("#result-button").click((e)=>{
     $("#result-button").toggleClass("active");
     $("#result-box").toggleClass("show-box");
 });
 
+// 显示参数配置容器
 $("#setting-button").click((e)=>{
     $("#setting-button").toggleClass("active");
     $("#params-box").toggleClass("show-box");
 });
 
+
+/**
+ * 点击复选框，选择算法
+ */
 $("#select-algorithm").on("click", (e)=>{
     let $target = $(e.target);
     if($target.is("input")){
@@ -60,7 +86,9 @@ $("#select-algorithm").on("click", (e)=>{
     }
 })
 
-
+/**
+ * 增/删参数项
+ */
 $("#params-list").on("click", (e)=>{
     let $target = $(e.target);
     // 添加参数项
@@ -79,22 +107,24 @@ $("#params-list").on("click", (e)=>{
 })
 
 
+// 
 $("#algorithm-list").on("click", (e)=>{
     let $target = $(e.target);
     if(!$target.hasClass("active")){
         $target.addClass("active").siblings().removeClass("active");
-        if(DATA.length > 0){
+        if(JSON.stringify(DATA) != '{}'){
             reload_graph(DATA[$target.attr("data-code")]);
+            
+            if($("#result-list .active").length){
+                hot_reload_bar_graph($("#result-list .active")[0].getAttribute("data-type"))
+            }
         }
 
     }
 })
 
 
-// 用于记录本次选择的算法
-var ALG_LIST = [];
-//用于保存不同算法产生的值
-var DATA = {};
+
 /**
  * 获取选定算法及其参数，用于表单提交
  * @return {"FN" : {"key1":"v1",...}, "LPA" : {...},...}
@@ -147,6 +177,10 @@ function get_params(alg_name){
 }
 
 
+/**
+ * 处理返回的数据
+ * @param {*} data 
+ */
 function updateData(data){
     //  更新侧边栏选项
     let algorithm = "";
@@ -169,6 +203,67 @@ function updateData(data){
     }
 
     reload_graph(DATA[ALG_LIST[0]]);
+
+    format_bar_graph_data(data);
 }
 
 
+/**
+ * 
+ * @param {*} data 
+ */
+function format_bar_graph_data(data){
+    // TODO 算法间的比较
+
+    // 社区间比较：显示community_data
+    for(let alg in data){
+        /**
+         * data = [{"1": {"density": 0.1323, "transity": 0.2351, "cluster": 0.3927}},
+         * {"2": {"density": 0.2444, "transity": 0.2857, "cluster": 0.22}},...]
+         */
+        let community = data[alg]["community"];
+
+        let xAxis = [], legend = [], series = {};
+
+        for (let i in community){
+            for(let index in community[i]){
+                xAxis.push("社区" + index);
+                let detail = community[i][index];
+
+                for(let key in detail){
+                    if( i == 0){
+                        legend.push(key);
+                        series[key] = [];
+                    }
+                    series[key].push(detail[key]);
+                }
+            }
+        }
+
+        BAR_GRAPH_DATA_COMMIUNITY[alg] = {
+            "xAxis" : xAxis,
+            "legend" : legend,
+            "series" : series
+        }
+    }
+
+}
+
+/**
+ * 
+ * @param {*} type 
+ */
+function hot_reload_bar_graph(type){
+    if(type === "1"){
+        // TODO  算法间比较
+    }
+    else if(type === "2"){
+        // 社区间比较
+        let alg_name = $("#algorithm-list .active").attr("data-code");
+        reload_bar_graph(BAR_GRAPH_DATA_COMMIUNITY[alg_name]);
+    }
+    else{
+        return false;
+    }
+    return true;
+}

@@ -7,7 +7,7 @@ bar_graph_option = {
         }
     },
     legend: {
-        data: ['学院', '学校', '学科', '全国']
+        data: ['学院', '学校', '学科']
     },
     toolbox: {
         show: true,
@@ -50,18 +50,34 @@ bar_graph_option = {
             name: '学科',
             type: 'bar',
             data: [150, 232,154, 190, 232,154]
-        },
-        {
-            name: '全国',
-            type: 'bar',
-            data: [98, 232,154, 101, 99, 40]
         }
     ]
 };
 
 
 function reload_bar_graph(data){
+    if(!data){
+        console.error("data error！", data);
+        return;
+    }
+    console.log(data)
+    
+    bar_graph_option.legend.data = data.legend;
+    bar_graph_option.xAxis[0].data = data.xAxis;
+    let series = [];
+    console.log(bar_graph_option.series);
+    for(let key in data.series){
+        series.push({
+            "name" : key,
+            "type" : "bar",
+            "data" : data.series[key]
+        })
+    }
+    bar_graph_option.series = series;
+    console.log(bar_graph_option.series);
+    console.log(series);
 
+    barChart.setOption(bar_graph_option);
 }
 
 var barChart = echarts.init(document.getElementById('bar_chart'));

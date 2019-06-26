@@ -3,7 +3,7 @@ var myChart = echarts.init(document.getElementById('container'));
 var categories = [];
 for (var i = 0; i < 6; i++) {
     categories[i] = {
-        name: '团队' + (i + 1)
+        name: '社区' + (i + 1)
     };
 }
 graph.nodes.forEach(function (node) {
@@ -84,14 +84,14 @@ graph_option = {
 
 function reload_graph(data){
     let nodes = data.nodes, links = data.links, cates = data.community;
-//    console.log(nodes.length, links.length, cates.length);
+    console.log(nodes.length, links.length, cates.length);
     graph_option.series[0].data = nodes;
     graph_option.series[0].links = links;
 
     categories = [];
     for (var i = 0; i < cates.length; i++) {
         categories[i] = {
-            name: '团队' + (i + 1)
+            name: '社区' + (i + 1)
         };
     }
     graph_option.series[0].categories = categories;

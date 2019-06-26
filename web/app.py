@@ -1,8 +1,11 @@
 from flask import Flask, render_template, redirect, request
 import logging, json, os
-
-from model.community_detect import cd_algorithm
 import igraph as ig
+
+import sys
+sys.path.append("..")
+from model.community_detect import cd_algorithm
+
 
 app = Flask(__name__)
 
@@ -393,4 +396,4 @@ def format_data(data):
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
-    app.run("0.0.0.0")
+    app.run(debug=True)
