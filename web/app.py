@@ -393,4 +393,4 @@ def format_data(data):
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
-    app.run(debug=True)
+    app.run("0.0.0.0")

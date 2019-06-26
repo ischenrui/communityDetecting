@@ -83,7 +83,10 @@ $("#algorithm-list").on("click", (e)=>{
     let $target = $(e.target);
     if(!$target.hasClass("active")){
         $target.addClass("active").siblings().removeClass("active");
-        reload_graph(DATA[$target.attr("data-code")]);
+        if(DATA.length > 0){
+            reload_graph(DATA[$target.attr("data-code")]);
+        }
+
     }
 })
 
