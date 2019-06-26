@@ -95,7 +95,11 @@ function reload_graph(data){
         };
     }
     graph_option.series[0].categories = categories;
-
+    graph_option.legend = [{
+        data: categories.map(function (a) {
+            return a.name;
+        })
+    }],
     myChart.setOption(graph_option);
 }
 
