@@ -60,7 +60,6 @@ function textBreaking(d3text, text) {
 // 生成关系连线路径
 function genLinkPath(link, line_style) {
     var path = null;
-    var temp = 0;
     var sx = link.source.x;
     var sy = link.source.y;
     var tx = link.target.x;
