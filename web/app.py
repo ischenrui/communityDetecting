@@ -10,7 +10,7 @@ from model.community_detect import cd_algorithm
 app = Flask(__name__)
 
 app.config['ALLOWED_EXTENSIONS'] = set(['gml'])
-app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['UPLOAD_FOLDER'] = 'F:\\Temp\\gmldata\\temp'
 
 app.config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
 
@@ -396,4 +396,4 @@ def format_data(data):
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
-    app.run(host="0.0.0.0")
+    app.run(host="127.0.0.1",debug=True)

@@ -9,7 +9,7 @@ path = 'E:/code/communityDetecting/web/uploads/temp'
 g = ig.Graph.Read_GML(path+'.gml')
 
 # 算法包括  Louvain,LPA,GN,CNM
-jsondata = cd_algorithm.detecting(g,'Louvain')
+jsondata = cd_algorithm.detecting(g,'CNM')
 
 
 # JSON格式 {nodes:[{id,name,school,insititution,teacherId,class,centrality}],
