@@ -32,7 +32,7 @@ class DB(object):
         #     charset='utf8'
         # ),
         "chen": pymysql.Connect(
-            host='127.0.0.1',
+            host='10.6.12.90',
             port=3306,
             user='root',
             password='Cr648546845',
