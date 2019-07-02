@@ -35,6 +35,7 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
         tnode['insititution'] = node['insititution']
         tnode['teacherId'] = node['teacherId']
         tnode['class'] = node['class']
+        tnode['centrality'] = node['centrality']
         data['nodes'].append(tnode)
     elist = g.get_edgelist()
     for i in range(0, len(g.es)):
@@ -176,6 +177,7 @@ def get_QCS(g):
 
     return q,c,s
 
+
 def get_core_node(g):
     """
     得到每个社区的核心节点
@@ -192,6 +194,7 @@ def get_core_node(g):
             t_dic[label] = [i]
 
     out = []
+    my_dic = {}  # 记录节点分析数据
     for k, v in t_dic.items():
         subg = g.subgraph(v).copy()
         edgelist = subg.get_edgelist()
@@ -204,16 +207,20 @@ def get_core_node(g):
         i = result.index(max(result))
         a = subg.vs['id'][i]
         out.append({k:int(a)})
-    return out
-    # score_list = []
-    # for node in g.vs:
-    #     tid = node['teacherId']
-    #     if tid in my_dic.keys():
-    #         score_list.append(my_dic[tid])
-    #     else:
-    #         score_list.append(0)
-    # g.vs['centrality'] = score_list
 
+        for i in range(0, subg_n):
+            tid = subg.vs['teacherId'][i]
+            my_dic[tid] = round(result[i], 4)
+
+    score_list = []
+    for node in g.vs:
+        tid = node['teacherId']
+        if tid in my_dic.keys():
+            score_list.append(my_dic[tid])
+        else:
+            score_list.append(0)
+    g.vs['centrality'] = score_list
+    return out,g
 
 def add_centrality(g):
     t_dic = {}
@@ -269,7 +276,7 @@ class cdutil:
             c = list(g.community_multilevel(weights=weights).as_cover())
         g = add_label(c, g)
         cover = get_cover(g, c)
-        core_node = get_core_node(g)
+        core_node,g = get_core_node(g)
         q_,c_,s_ = get_QCS(g)
         community_data = get_community_data(g)
 
