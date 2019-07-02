@@ -21,6 +21,10 @@ $("#file-input").on("input propertychange", function() {
 // 确认上传
 $("#upload-button")
     .on("click", function() {
+        if(RUNING){
+            return;
+        }
+        RUNING = true;
         var form_data = new FormData();
         var file_info = $("#file-input")[0].files[0];
         var algorithm = get_algorithm_and_params();
@@ -35,7 +39,7 @@ $("#upload-button")
             contentType: false,
             processData: false,
             success: function(cur_data) {
-//                console.log(cur_data);
+//              console.log(cur_data);
                 data = JSON.parse(cur_data);
                  updateData(data);
                 // 关闭上传框
@@ -46,6 +50,10 @@ $("#upload-button")
             },
             error: function() {
                 alert("数据上传失败！");
+            },
+            finally:function(){
+                console.log("finally");
+                RUNING = false;
             }
         })
     })

@@ -6,6 +6,8 @@ var DATA = {};
 var BAR_GRAPH_DATA_COMMIUNITY = {};
 // 算法间比较数据
 var BAR_GRAPH_DATA_ALG = {};
+// 标识当前是否在运算，防止重复提交
+var RUNING = false;
 
 
 
