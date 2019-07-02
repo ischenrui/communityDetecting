@@ -328,12 +328,6 @@ def echarts():
     return render_template('index_echarts.html')
 
 
-@app.route('/admin')
-def admin():
-    return render_template('admin.html')
-    pass
-
-
 @app.route("/upload_echarts", methods=["POST"])
 def upload_echarts():
     file_info = request.files["file"]

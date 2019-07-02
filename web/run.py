@@ -1,9 +1,11 @@
 from flask import Flask, render_template
 from web.views.researcher import researcher
+from web.views.my_admin import my_admin
 
 app = Flask(__name__)
 
 app.register_blueprint(researcher)
+app.register_blueprint(my_admin)
 # app.register_blueprint(user, url_prefix='/user')
 
 

@@ -34,7 +34,7 @@ localpcPOOL = PooledDB(
     setsession=[],  # 开始会话前执行的命令列表。如：["set datestyle to ...", "set time zone ..."]
     ping=0,
     # ping MySQL服务端，检查是否服务可用。# 如：0 = None = never, 1 = default = whenever it is requested, 2 = when a cursor is created, 4 = when a query is executed, 7 = always
-    host='10.6.11.26',
+    host='10.6.12.90',
     port=3306,
     user='root',
     password='Cr648546845',
@@ -91,5 +91,5 @@ class dbutil:
         return r
 
 
-db_crpc = dbutil(crpcPOOL)
+# db_crpc = dbutil(crpcPOOL)
 db_localpc = dbutil(localpcPOOL)
