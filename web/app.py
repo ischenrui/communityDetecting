@@ -327,6 +327,13 @@ def upload_file():
 def echarts():
     return render_template('index_echarts.html')
 
+
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+    pass
+
+
 @app.route("/upload_echarts", methods=["POST"])
 def upload_echarts():
     file_info = request.files["file"]
@@ -393,6 +400,7 @@ def format_data(data):
         back_data['links'].append(link)
 
     return back_data
+
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
