@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from web.views.researcher import researcher
+from web.views.community import community
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY']='dogdong'
 app.register_blueprint(researcher)
-# app.register_blueprint(user, url_prefix='/user')
+app.register_blueprint(community)
 
 
 @app.route('/')
