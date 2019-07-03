@@ -7,3 +7,5 @@ web/uploads/*
 */.vscode
 .idea
 model/my_test.py
+
+Pipfile.lock

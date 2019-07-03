@@ -27,6 +27,9 @@ $("#upload-button")
         RUNING = true;
         var form_data = new FormData();
         var file_info = $("#file-input")[0].files[0];
+        
+        var file_name = getFileName($("#file-input").val())
+               
         var algorithm = get_algorithm_and_params();
 
         form_data.append("file", file_info);
@@ -39,9 +42,13 @@ $("#upload-button")
             contentType: false,
             processData: false,
             success: function(cur_data) {
-//              console.log(cur_data);
+                sessionStorage.setItem("data", data);
+                sessionStorage.setItem("filename", file_name);
+
+                // console.log(cur_data);
                 data = JSON.parse(cur_data);
-                 updateData(data);
+
+                updateData(data);
                 // 关闭上传框
                 $("#upload-layout").hide();
                 // 清空待上传文件信息
@@ -62,9 +69,16 @@ $("#upload-button")
 $("#download-data")
     .on("click", downFile);
 
-// 先清洗数据 再下载
+// 下载数据
 function downFile() {
-    
+    let file_name = sessionStorage.getItem("filename");
+    if(file_name){
+        file_name += ".json";
+        let data = sessionStorage.getItem("data");
+
+        let file = new File([data], file_name, { type: "text/plain;charset=utf-8" });
+        saveAs(file);
+    }
 }
 
 // 导出图片
@@ -73,3 +87,16 @@ $("#download-img")
 		saveSvgAsPng(document.getElementById("container"), "networkGraph.png");
     })
     
+/**
+ * 将文件名从文件路径中分离
+ * @param {string} file_path 
+ */
+function getFileName(file_path){
+    /**
+     * "C:\fakepath\北京大学工学院.gml"
+     * ==>  ["C:\fakepath\北京大学工学院", "gml"]
+     * ==>  ["C:","fakepath","北京大学工学院"]
+     */
+    let path_arr = file_path.split(".")[0].split("\\");
+    return path_arr[path_arr.length -1]
+}
