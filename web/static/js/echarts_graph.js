@@ -85,7 +85,7 @@ graph_option = {
 function reload_graph(data){
     if(!"nodes" in data) return;
     let nodes = data.nodes, links = data.links, cates = data.community;
-    console.log(nodes.length, links.length, cates.length);
+    // console.log(nodes.length, links.length, cates.length);
     graph_option.series[0].data = nodes;
     graph_option.series[0].links = links;
 

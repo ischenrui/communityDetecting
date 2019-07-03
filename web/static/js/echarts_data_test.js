@@ -6,8 +6,13 @@ var graph = {
     "school":"北京大学",
     "insititution":"地球与空间科学学院",
     "teacherId":"113897",
-    "symbolSize": 10,
-    "value": 100,
+    "symbolSize": 60,
+    "itemStyle":{        
+      "borderWidth":19,
+      "borderColor" : "black",
+      color:"white"
+
+    }
   },{
     "name":1,
     "label":"崔莹",
@@ -16,7 +21,7 @@ var graph = {
     "insititution":"地球与空间科学学院",
     "teacherId":"113759",
     "symbolSize": 10,
-    "value": 100,
+    
   },{
     "name":2,
     "label":"魏春景",
@@ -151,7 +156,12 @@ var graph = {
     "insititution":"地球与空间科学学院",
     "teacherId":"113805",
     "symbolSize": 50,
-    "value": 100,
+    "symbol" : "rect",
+    "itemStyle" : {
+      "borderWidth":19,
+      "borderColor" : "black"
+    }
+   
   },{
     "name":17,
     "label":"古丽冰",

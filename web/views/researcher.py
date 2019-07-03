@@ -32,8 +32,7 @@ def upload_echarts():
     back = {}
     for k in code:
         if k in config["ALGORITHM"]:
-            jsondata = cd_algorithm.detecting(g, k)
-            back[k] = format_data(jsondata)
+            back[k] = cd_algorithm.detecting(g, k)
         else:
             print("算法有误")
 
@@ -47,39 +46,3 @@ def allowed_file(filename):
     """
     global ALLOWED_EXTENSIONS
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in config['ALLOWED_EXTENSIONS']
-
-
-def format_data(data):
-    """
-    将算法返回的数据格式化为前端显示需要的数据格式
-    :param data: 算法返回的数据集, 其中 community_data 的键是 class 的值，即为社区值
-        {
-            "nodes":[{"id": 1, "name": "张三","school": "", "insititution": "", "code": "0812", "teacherId": "", "class": 1, "centrality": 0.8889},...],
-            "edges":[{"source": 2, "target": 1, "paper": 2, "patent": 8, "project": 1, "weight": 11},...],
-            "community_data": [{"1": {"density": 0.6667, "transity": 0.6, "cluster": 0.5833}},...]
-         }
-    :return: 字典格式
-        {
-            "nodes":[{"name":1,"label":"张三","code":0812,"school":"","insititution":"","teacherId":"", "class": 0,"symbolSize": 10},,...],
-            "links" : [{"source":1,"target":0,"paper":1,"patent":0,"project":0,"value":1 },...],
-            "community_data": [{"1": {"density": 0.6667, "transity": 0.6, "cluster": 0.5833},...]
-        }
-    """
-    data = json.loads(data)
-    back_data = {
-        "nodes" : [],
-        "links" : [],
-        "community" : data['community_data']
-    }
-
-    for node in data["nodes"]:
-        node['label'], node['name'], node['category'] = node['name'], node['id'], node["class"]-1
-        del node["id"], node["class"]
-        back_data["nodes"].append(node)
-    for link in data["edges"]:
-        link["value"] = link["weight"]
-        del link["weight"]
-        back_data['links'].append(link)
-
-    return back_data
-

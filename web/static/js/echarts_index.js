@@ -180,6 +180,73 @@ function get_params(alg_name){
 
 
 /**
+ * 将算法返回的数据格式化为前端显示需要的数据格式
+   
+ * @param {json} data 算法返回的数据集, 其中 community_data 的键是 class 的值，即为社区值
+ *{
+ *    "nodes":[{"id": 1, "name": "张三","school": "", "insititution": "", "code": "0812", "teacherId": "", "class": 1, "centrality": 0.8889},...],
+ *    "edges":[{"source": 2, "target": 1, "paper": 2, "patent": 8, "project": 1, "weight": 11},...],
+ *    "community_data": [{"1": {"density": 0.6667, "transity": 0.6, "cluster": 0.5833}},...]
+ *}
+ * @return: object 格式
+ *{
+ *    "nodes":[{"name":1,"label":"张三","code":0812,"school":"","insititution":"","teacherId":"", "class": 0,"symbolSize": 10},,...],
+ *    "links" : [{"source":1,"target":0,"paper":1,"patent":0,"project":0,"value":1 },...],
+ *    "community_data": [{"1": {"density": 0.6667, "transity": 0.6, "cluster": 0.5833},...]
+ *}
+ */
+function format_data_to_echarts(data){
+    DATA = {};
+    for(let alg_name in data){
+        let info = JSON.parse(data[alg_name]);
+        
+        let alg_info = {
+            "nodes" : [],
+            "links" : [],
+            "community" : info['community_data']
+        }
+
+        // TODO core_node 
+        // let core_node = [];
+        // console.log(info.core_node)
+        // for(let i in info.core_node){
+        //     console.log(info.core_node[i],i,typeof(i));
+        //     console.log(info.core_node[i][parseInt(i) + 1],parseInt(i) + 1);
+        //     core_node.push(info.core_node[i][parseInt(i) + 1]);
+        // }
+        // console.log(core_node);
+
+
+        for(let key in info["nodes"]){
+            let node = info["nodes"][key];
+            node['label'] =  node['name'];
+            node['name'] = node['id'];
+            node['category'] = node["class"]-1;
+            // if(node["name"] in core_node){
+            //     console.log("emphsize" , node["name"]);
+            //     node["borderWidth"] = 2;
+            //     node["borderColor"] = "black"
+            // }
+            node['symbolSize'] = parseInt(node['centrality'] * 30 + 5);
+            delete node["id"];
+            delete node["class"];
+            delete node["centrality"];
+            alg_info["nodes"].push(node)
+        }
+        for(let key in info["edges"]){
+            let link = info["edges"][key];
+            link["value"] = link["weight"];
+            delete link["weight"];
+            alg_info['links'].push(link);
+        }
+        DATA[alg_name]= alg_info;
+    }
+    
+    format_bar_graph_data(data);
+}
+
+
+/**
  * 处理返回的数据
  * @param {*} data 
  */
@@ -195,18 +262,8 @@ function updateData(data){
         }
     }
     $("#algorithm-list").html(algorithm);
-
-    DATA = data;
-    for(let alg_name in DATA){
-        for(let i in DATA[alg_name].nodes){
-            let node = DATA[alg_name].nodes[i];
-            node['symbolSize'] = parseInt(node['centrality'] * 20 + 5);
-        }
-    }
-
     reload_graph(DATA[ALG_LIST[0]]);
 
-    format_bar_graph_data(data);
 }
 
 
@@ -215,15 +272,30 @@ function updateData(data){
  * @param {*} data 
  */
 function format_bar_graph_data(data){
-    // TODO 算法间的比较
+    let xAxis_alg = [], legend_alg = [], series_alg = {};
 
-    // 社区间比较：显示community_data
     for(let alg in data){
+        let info = JSON.parse(data[alg]);
+        xAxis_alg.push(alg);
+        // 算法间的比较
+        for (let i in info['algorithm_compare']){
+                let content = info["algorithm_compare"][i];
+                for(let key in content){
+                    if(legend_alg.indexOf(key) < 0){
+                        legend_alg.push(key);
+                        series_alg[key] = [];
+                    }
+                    series_alg[key].push(content[key]);
+                }
+            
+        }
+        
+        // 社区间比较：显示community_data
         /**
          * data = [{"1": {"density": 0.1323, "transity": 0.2351, "cluster": 0.3927}},
          * {"2": {"density": 0.2444, "transity": 0.2857, "cluster": 0.22}},...]
          */
-        let community = data[alg]["community"];
+        let community = info["community_data"];
 
         let xAxis = [], legend = [], series = {};
 
@@ -249,6 +321,11 @@ function format_bar_graph_data(data){
         }
     }
 
+    BAR_GRAPH_DATA_ALG = {
+        "xAxis" : xAxis_alg,
+        "legend" : legend_alg,
+        "series" : series_alg
+    }
 }
 
 /**
@@ -258,6 +335,7 @@ function format_bar_graph_data(data){
 function hot_reload_bar_graph(type){
     if(type === "1"){
         // TODO  算法间比较
+        reload_bar_graph(BAR_GRAPH_DATA_ALG);
     }
     else if(type === "2"){
         // 社区间比较

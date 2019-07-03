@@ -60,12 +60,12 @@ function reload_bar_graph(data){
         console.error("data error！", data);
         return;
     }
-    console.log(data)
+    // console.log(data)
     
     bar_graph_option.legend.data = data.legend;
     bar_graph_option.xAxis[0].data = data.xAxis;
     let series = [];
-    console.log(bar_graph_option.series);
+    // console.log(bar_graph_option.series);
     for(let key in data.series){
         series.push({
             "name" : key,

@@ -22,6 +22,7 @@ $("#file-input").on("input propertychange", function() {
 $("#upload-button")
     .on("click", function() {
         if(RUNING){
+            alert("请不要重复提交~");
             return;
         }
         RUNING = true;
@@ -42,25 +43,27 @@ $("#upload-button")
             contentType: false,
             processData: false,
             success: function(cur_data) {
-                sessionStorage.setItem("data", data);
+                sessionStorage.setItem("data", cur_data);
                 sessionStorage.setItem("filename", file_name);
 
                 // console.log(cur_data);
                 data = JSON.parse(cur_data);
-
+                // console.log(data);
+                format_data_to_echarts(data);
                 updateData(data);
                 // 关闭上传框
                 $("#upload-layout").hide();
                 // 清空待上传文件信息
                 // $("#file-name").text(this.value);
                 $("#file-state").text("上传成功");
+                RUNING = false;
             },
             error: function() {
                 alert("数据上传失败！");
+                RUNING = false;
             },
             finally:function(){
                 console.log("finally");
-                RUNING = false;
             }
         })
     })
