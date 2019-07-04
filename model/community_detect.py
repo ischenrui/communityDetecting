@@ -206,7 +206,7 @@ def get_core_node(g):
         result = [(a[i] + b[i] + c[i]) / 3 for i in range(0, subg_n)]
         i = result.index(max(result))
         a = subg.vs['id'][i]
-        out.append({k:int(a)})
+        out.append(int(a))
 
         for i in range(0, subg_n):
             tid = subg.vs['teacherId'][i]
