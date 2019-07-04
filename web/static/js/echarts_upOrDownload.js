@@ -35,6 +35,7 @@ $("#upload-button")
 
         form_data.append("file", file_info);
         form_data.append("code", JSON.stringify(algorithm));
+        myChart.showLoading();
         $.ajax({
             url: "upload_echarts",
             type: "POST",

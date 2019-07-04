@@ -205,29 +205,27 @@ function format_data_to_echarts(data){
             "links" : [],
             "community" : info['community_data']
         }
-
-        // TODO core_node 
-        // let core_node = [];
-        // console.log(info.core_node)
-        // for(let i in info.core_node){
-        //     console.log(info.core_node[i],i,typeof(i));
-        //     console.log(info.core_node[i][parseInt(i) + 1],parseInt(i) + 1);
-        //     core_node.push(info.core_node[i][parseInt(i) + 1]);
-        // }
-        // console.log(core_node);
-
-
+        
         for(let key in info["nodes"]){
             let node = info["nodes"][key];
             node['label'] =  node['name'];
             node['name'] = node['id'];
             node['category'] = node["class"]-1;
-            // if(node["name"] in core_node){
-            //     console.log("emphsize" , node["name"]);
-            //     node["borderWidth"] = 2;
-            //     node["borderColor"] = "black"
-            // }
             node['symbolSize'] = parseInt(node['centrality'] * 30 + 5);
+            node["draggable"] = true;
+            if(info.core_node.indexOf(node["name"]) >= 0){
+                // node["symbol"] = "pin";
+                // node["symbol"] = "diamond";
+                // node['symbolSize'] += 10;
+                node["itemStyle"]= {
+                    "normal": {
+                        "borderColor": 'yellow',
+                        "borderWidth": 5,
+                        "shadowBlur": 10,
+                        "shadowColor": 'rgba(0, 0, 0, 0.3)'
+                    }
+                }
+            }
             delete node["id"];
             delete node["class"];
             delete node["centrality"];

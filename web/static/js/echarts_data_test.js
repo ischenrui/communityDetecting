@@ -7,11 +7,13 @@ var graph = {
     "insititution":"地球与空间科学学院",
     "teacherId":"113897",
     "symbolSize": 60,
-    "itemStyle":{        
-      "borderWidth":19,
-      "borderColor" : "black",
-      color:"white"
-
+    "itemStyle":{
+      "normal":{
+        "borderWidth":5,
+        "borderColor" : "black",
+        "shadowBlur": 10,
+        "shadowColor": 'rgba(0, 0, 0, 0.3)'
+      }    
     }
   },{
     "name":1,

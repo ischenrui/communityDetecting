@@ -102,7 +102,9 @@ function reload_graph(data){
         })
     }],
     myChart.setOption(graph_option);
+    myChart.hideLoading();
 }
 
 myChart.setOption(graph_option);
+myChart.hideLoading();
 
