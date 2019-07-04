@@ -88,7 +88,14 @@ function downFile() {
 // 导出图片
 $("#download-img")
 	.on("click", function() {
-		saveSvgAsPng(document.getElementById("container"), "networkGraph.png");
+        let file_name = sessionStorage.getItem("filename");
+        if(file_name){
+            let img = myChart.getDataURL();
+            let a = document.createElement("a");
+            a.href = img;
+            a.download = file_name+".png";
+            a.click();
+        }
     })
     
 /**

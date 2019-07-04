@@ -27,7 +27,17 @@ graph_option = {
             }
         }
     },
-
+    toolbox: {
+        　　show: true,
+        　　feature: {
+        　　　　saveAsImage: {
+                    show:true, 
+                    // excludeComponents :['toolbox'],
+                    type:"png",
+                    pixelRatio: 2
+        　　　　}
+        　　}
+    },
     // 图例
     legend: [{
         // selectedMode: 'single',
@@ -88,6 +98,9 @@ function reload_graph(data){
     // console.log(nodes.length, links.length, cates.length);
     graph_option.series[0].data = nodes;
     graph_option.series[0].links = links;
+
+    // 设置保存为图片时的名称
+    graph_option.toolbox.feature.name = sessionStorage.getItem("filename");
 
     categories = [];
     for (var i = 0; i < cates.length; i++) {
