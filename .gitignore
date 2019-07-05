@@ -2,10 +2,11 @@ db/*
 
 web/test.py
 web/app.py
-*/__pycache__
-web/uploads/*
-*/.vscode
+__pycache__
+
+.vscode
 .idea
 model/my_test.py
 
 Pipfile.lock
+config.py

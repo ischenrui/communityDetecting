@@ -9,13 +9,13 @@ researcher = Blueprint('researcher', __name__)
 
 config = {}
 config['ALLOWED_EXTENSIONS'] = set(['gml'])
-config['UPLOAD_FOLDER'] = 'F:\\Temp\\gmldata\\temp'
+config['UPLOAD_FOLDER'] = 'upload'
 config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
 
 
 @researcher.route('/researcher')
 def echarts():
-    return render_template('index_echarts.html')
+    return render_template('researcher_page.html')
 
 @researcher.route("/upload_echarts", methods=["POST"])
 def upload_echarts():
