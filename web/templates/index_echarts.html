@@ -5,7 +5,6 @@
         <title>数据可视化</title>
         <script type="text/javascript" src="../static/js/third_part/jquery-3.3.1.js"></script>
         <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-        <script type="text/javascript" src="../static/js/third_part/saveSvgAsPng.js"></script>
 
         <link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../static/css/echarts_style.css">
@@ -23,15 +22,7 @@
         <button class="top-menu-item" id="upload-data"><i class="fa fa-upload"></i> 上传数据</button>
         <button class="top-menu-item" id="download-data"><i class="fa fa-download"></i> 导出数据</button>
         <button class="top-menu-item" id="download-img"><i class="fa fa-share"></i> 导出图片</button>
-        <!-- <button class="top-menu-item" id="setting-visiable-button"><i class="fa fa-gear"></i>配置参数</button> -->
         
-        <div id="top-right-bar">
-            <button class="top-menu-item" id="stop-button">
-                <div id="network-status"></div>
-                <div id="stop-button-text">停止布局</div>
-            </button>
-            
-        </div>  
     </div>
 
     <div id="left-tool-bar">
@@ -160,4 +151,6 @@
 
 <script src="../static/js/echarts_bar_graph.js"></script>
 <script src="../static/js/echarts_upOrDownload.js"></script>
+<!-- <script type="text/javascript" src="../static/js/third_part/saveSvgAsPng.js"></script> -->
+<script src="../static/js/third_part/FileSaver.js"></script>
 </html>

@@ -27,7 +27,17 @@ graph_option = {
             }
         }
     },
-
+    toolbox: {
+        　　show: true,
+        　　feature: {
+        　　　　saveAsImage: {
+                    show:true, 
+                    // excludeComponents :['toolbox'],
+                    type:"png",
+                    pixelRatio: 2
+        　　　　}
+        　　}
+    },
     // 图例
     legend: [{
         // selectedMode: 'single',
@@ -83,10 +93,14 @@ graph_option = {
 }
 
 function reload_graph(data){
+    if(!"nodes" in data) return;
     let nodes = data.nodes, links = data.links, cates = data.community;
-    console.log(nodes.length, links.length, cates.length);
+    // console.log(nodes.length, links.length, cates.length);
     graph_option.series[0].data = nodes;
     graph_option.series[0].links = links;
+
+    // 设置保存为图片时的名称
+    graph_option.toolbox.feature.name = sessionStorage.getItem("filename");
 
     categories = [];
     for (var i = 0; i < cates.length; i++) {
@@ -101,7 +115,9 @@ function reload_graph(data){
         })
     }],
     myChart.setOption(graph_option);
+    myChart.hideLoading();
 }
 
 myChart.setOption(graph_option);
+myChart.hideLoading();
 
