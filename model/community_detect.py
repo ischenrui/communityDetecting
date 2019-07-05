@@ -12,41 +12,49 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
             "edges": [{"source": 1, "target": 0, "paper": 0, "patent": 0, "project": 1, "weight": 1},...]
             "community_data": [{"1": {"density": 0.6, "transity": 0.5455, "scale": 5},...}
             "algorithm_compare": [{"cover": 0.9178082191780822, "Q": 0.6667031923442183, "C": 0.5580385487528344, "S": 0.75}]
-            "core_node": [{"1": 0}, {"2": 3}, ...]
+            "core_node": [0,3,...]
             }
             说明：
             {
             "nodes"中，"class"是社区编号
             "community_data": 中"scale"是社区规模，即社区内节点个数
             "algorithm_compare": 中"cover"是节点覆盖率, "Q"是模块度, "C"是聚集系数, "S"是社区强度
-            "core_node": 是各个社区中综合中心度最高的节点， 即，社区编号:节点id
+            "core_node": 是各个社区中综合中心度最高的节点
             }
         """
-    data = {'nodes': [], 'edges': [] }
-    data['community_data'] = list(community_data)
-    data['algorithm_compare'] = [{"cover":cover,"Q":q_,"C":c_,"S":s_}]
-    data['core_node'] = core_node
+    data = {'nodes': [], 'edges': []}
+
+
+    tid_index = {}
     for node in g.vs:
         tnode = {}
-        tnode['id'] = int(node['id'])
+        tnode['teacherId'] = int(node['teacherId'])
+        # tnode['id'] = int(node['id'])
         tnode['name'] = node['name']
         tnode['code'] = node['code']
         tnode['school'] = node['school']
         tnode['insititution'] = node['insititution']
-        tnode['teacherId'] = node['teacherId']
         tnode['class'] = node['class']
         tnode['centrality'] = node['centrality']
         data['nodes'].append(tnode)
+        tid_index[int(node['id'])] = int(node['teacherId'])
+
     elist = g.get_edgelist()
     for i in range(0, len(g.es)):
         tedge = {}
-        tedge['source'] = elist[i][1]
-        tedge['target'] = elist[i][0]
+        # tedge['source'] = elist[i][1]
+        # tedge['target'] = elist[i][0]
+        if elist[i][1] in tid_index.keys(): tedge['source'] = tid_index[elist[i][1]]
+        if elist[i][0] in tid_index.keys(): tedge['target'] = tid_index[elist[i][0]]
         tedge['paper'] = int(g.es[i]['paper'])
         tedge['patent'] = int(g.es[i]['patent'])
         tedge['project'] = int(g.es[i]['project'])
         tedge['weight'] = int(g.es[i]['weight'])
         data['edges'].append(tedge)
+
+    data['community_data'] = list(community_data)
+    data['algorithm_compare'] = [{"cover": cover, "Q": q_, "C": c_, "S": s_}]
+    data['core_node'] = [tid_index[_] for _ in core_node]
     return json.dumps(data)
 
 def getColor(value):
