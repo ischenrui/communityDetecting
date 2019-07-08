@@ -132,17 +132,12 @@ $("#algorithm-list").on("click", (e)=>{
  * @return {"FN" : {"key1":"v1",...}, "LPA" : {...},...}
  */
 function get_algorithm_and_params(){
-    let alg = $("#params-box .param-container");
-    let result = {};
+    let alg = $("#select-algorithm input:checked");
     ALG_LIST = [];
-//    console.log(alg);
     for (let i = 0; i < alg.length; i++) {
-        let alg_name = alg[i].getAttribute("data-alg");
-        ALG_LIST.push(alg_name);
-        result[alg_name] = save_params(alg_name);
+        ALG_LIST.push(alg[i].value);
     }
-//    console.log(ALG_LIST);
-    return result;
+    return ALG_LIST;
 }
 
 
