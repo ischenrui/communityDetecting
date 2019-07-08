@@ -43,15 +43,14 @@ $("#upload-button")
             async: false,
             contentType: false,
             processData: false,
+            dataType: "json",
             success: function(cur_data) {
                 sessionStorage.setItem("data", cur_data);
                 sessionStorage.setItem("filename", file_name);
 
                 // console.log(cur_data);
-                data = JSON.parse(cur_data);
-                // console.log(data);
-                format_data_to_echarts(data);
-                updateData(data);
+                format_data_to_echarts(cur_data);
+                updateData(cur_data);
                 // 关闭上传框
                 $("#upload-layout").hide();
                 // 清空待上传文件信息

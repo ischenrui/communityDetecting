@@ -9,7 +9,7 @@ researcher = Blueprint('researcher', __name__)
 
 config = {}
 config['ALLOWED_EXTENSIONS'] = set(['gml'])
-config['UPLOAD_FOLDER'] = 'upload'
+config['UPLOAD_FOLDER'] = 'uploads'
 config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
 
 
