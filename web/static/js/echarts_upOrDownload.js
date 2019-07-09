@@ -21,11 +21,7 @@ $("#file-input").on("input propertychange", function() {
 // 确认上传
 $("#upload-button")
     .on("click", function() {
-        if(RUNING){
-            alert("请不要重复提交~");
-            return;
-        }
-        RUNING = true;
+        
         var form_data = new FormData();
         var file_info = $("#file-input")[0].files[0];
         
@@ -33,8 +29,13 @@ $("#upload-button")
                
         var algorithm = get_algorithm_and_params();
 
+        if(RUNING){
+            alert("请不要重复提交~");
+            return;
+        }
+        RUNING = true;
         form_data.append("file", file_info);
-        form_data.append("code", JSON.stringify(algorithm));
+        form_data.append("code", algorithm);
         myChart.showLoading();
         $.ajax({
             url: "upload_echarts",

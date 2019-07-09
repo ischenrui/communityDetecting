@@ -6,8 +6,8 @@ __pycache__
 
 
 
-.vscode
-.idea
+.vscode/
+.idea/
 model/my_test.py
 
 Pipfile.lock

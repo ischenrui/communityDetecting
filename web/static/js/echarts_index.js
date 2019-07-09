@@ -133,6 +133,10 @@ $("#algorithm-list").on("click", (e)=>{
  */
 function get_algorithm_and_params(){
     let alg = $("#select-algorithm input:checked");
+    if(alg.length == 0){
+        alert("请选择算法");
+        return;
+    }
     ALG_LIST = [];
     for (let i = 0; i < alg.length; i++) {
         ALG_LIST.push(alg[i].value);
