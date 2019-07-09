@@ -56,53 +56,10 @@
                     <dt title="算法间比较" data-type="1">算法间比较</dt>
                     <dt title="社区间比较" data-type="2">社区间比较</dt>
                 </dl>
-            </li>	
-            <li id="setting-button" title="配置参数">
-                <span class="menu">
-                    <i class="fa fa-gear"></i>
-                    配置参数
-                </span>
-            </li>
-            <li id="result-button" title="分析结果">
-                <span class="menu">
-                    <i class="fa fa-users"></i>
-                    分析结果
-                </span>
             </li>
         </ul>
     </div>
     
-
-    
-    <div id="params-box" class="right-box">
-        <!-- <h3>配置参数</h3><hr> -->
-        <div id="params-list"></div>
-        <!-- <div id="param-FN" class="param-container">
-            <h4 class="param-title">FN</h4>
-
-            <div class="param-items">
-                <input type="text" class="params-key" placeholder="参数名">
-                <input type="text" class="params-value" placeholder="参数值">
-                <i class="fa fa-plus-circle plus-icon"></i>
-                <i class="fa fa-minus-circle minus-icon"></i>
-            </div>
-        </div> -->
-    </div>
-    
-    <div id="result-box" class="right-box">
-        <p><strong>分析结果:</strong></p>
-        <div id="result-info">
-            <p class="info">title</p>
-            <p class="info">title</p>
-            <p class="info">title</p>
-            <p class="info">title</p>
-            <p class="info">title</p>
-            <p class="info">title</p>
-            <p class="info">title</p>
-        </div>
-    </div>
-
-
     <div id="upload-layout">
         <div id="upload-top-layout">
             <div id="file-title">导入json数据</div>
@@ -153,4 +110,10 @@
 <script src="../static/js/echarts_upOrDownload.js"></script>
 <!-- <script type="text/javascript" src="../static/js/third_part/saveSvgAsPng.js"></script> -->
 <script src="../static/js/third_part/FileSaver.js"></script>
+<script>
+    console.log(graph);
+    graph = formatGraph(graph);
+    console.log(graph);
+    reload_graph(graph);
+</script>
 </html>

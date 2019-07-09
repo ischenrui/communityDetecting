@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from web.views.researcher import researcher
-from web.views.community import community
+from views.researcher import researcher
+from views.community import community
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='dogdong'

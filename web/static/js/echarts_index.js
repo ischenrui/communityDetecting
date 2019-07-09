@@ -197,47 +197,17 @@ function get_params(alg_name){
  */
 function format_data_to_echarts(data){
     DATA = {};
+    console.log(data);
     for(let alg_name in data){
-        let info = JSON.parse(data[alg_name]);
         
-        let alg_info = {
-            "nodes" : [],
-            "links" : [],
-            "community" : info['community_data']
+        let info = data[alg_name];
+
+        if (typeof(info) == "string") {
+            info = JSON.parse(info);
         }
-        
-        for(let key in info["nodes"]){
-            let node = info["nodes"][key];
-            node['label'] =  node['name'];
-            node['name'] = node['id'];
-            node['category'] = node["class"]-1;
-            node['symbolSize'] = parseInt(node['centrality'] * 30 + 5);
-            node["draggable"] = true;
-            if(info.core_node.indexOf(node["name"]) >= 0){
-                // node["symbol"] = "pin";
-                // node["symbol"] = "diamond";
-                // node['symbolSize'] += 10;
-                node["itemStyle"]= {
-                    "normal": {
-                        "borderColor": 'yellow',
-                        "borderWidth": 5,
-                        "shadowBlur": 10,
-                        "shadowColor": 'rgba(0, 0, 0, 0.3)'
-                    }
-                }
-            }
-            delete node["id"];
-            delete node["class"];
-            delete node["centrality"];
-            alg_info["nodes"].push(node)
-        }
-        for(let key in info["edges"]){
-            let link = info["edges"][key];
-            link["value"] = link["weight"];
-            delete link["weight"];
-            alg_info['links'].push(link);
-        }
-        DATA[alg_name]= alg_info;
+
+        DATA[alg_name]= formatGraph(info);
+        console.log(DATA[alg_name]);
     }
     
     format_bar_graph_data(data);
