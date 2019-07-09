@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <title>数据可视化</title>
+        <script type="text/javascript" src="../static/js/third_part/jquery-3.3.1.js"></script>
+        <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+
+        <link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/echarts_style.css">
+        <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    </head>
+<body>
+    <div id="bar_chart_container">
+        <div id="bar_chart"></div>
+    </div>
+    <div id="container"></div>
+
+
+    <div id="top-tool-bar">
+        
+        <button class="top-menu-item" id="upload-data"><i class="fa fa-upload"></i> 上传数据</button>
+        <button class="top-menu-item" id="download-data"><i class="fa fa-download"></i> 导出数据</button>
+        <button class="top-menu-item" id="download-img"><i class="fa fa-share"></i> 导出图片</button>
+        
+    </div>
+
+    <div id="left-tool-bar">
+        <div class="logo">
+            <h1 style="margin: 0;">LOGO</h1>
+        </div>
+        <ul id="tool-list">
+            <li id="algorithm-show" class="active">
+                <span class="menu">
+                    <i class="fa fa-filter"></i> 
+                    选择算法 
+                    <i class="angle-right fa fa-angle-down"></i>
+                </span> 
+
+                <dl id="algorithm-list" class="item-list">
+                    <dt class="active" data-code="LPA">LPA</dt>
+                    <dt data-code="GN">GN</dt>
+                    <dt data-code="CNM">CNM</dt>
+                    <dt data-code="Louvain">Louvain</dt>
+                </dl>
+            </li>
+
+           
+            <li id="bar-graph-show" class="active">
+                <span class="menu" title="分类统计图" >
+                    <i class="fa fa-bar-chart"></i> 
+                    分类统计图
+                    <i class="angle-right fa fa-angle-down"></i>
+                </span> 
+                <dl id="result-list" class="item-list">
+                    <dt title="算法间比较" data-type="1">算法间比较</dt>
+                    <dt title="社区间比较" data-type="2">社区间比较</dt>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="upload-layout">
+        <div id="upload-top-layout">
+            <div id="file-title">导入json数据</div>
+            <div id="file-close">×</div>
+        </div>
+        <div id="info-file">
+            <div id="file-item">
+                <div id="file-name"></div>
+                <div id="file-state"></div>
+            </div>
+        </div>
+        <input type="file" id="file-input" enctype="multiple/form-data" accept="text/gml" method="post"/>
+        <button id="select-file" class="file-button">选择文件</button>
+
+        <fieldset id="select-algorithm">
+            <legend>选择算法</legend>
+            <span>
+                <input id="alg-LPA" data-name="LPA" name="select-algorithm" type="checkbox" value="LPA">
+                <label for="alg-LPA">LPA</label>
+            </span>
+            <span>
+                <input id="alg-GN"  data-name="GN"  name="select-algorithm" type="checkbox" value="GN">
+                <label for="alg-GN">GN</label>
+            </span>
+            <span>
+                <input id="alg-CNM"  data-name="CNM"  name="select-algorithm" type="checkbox" value="CNM">
+                <label for="alg-CNM">CNM</label>
+            </span>
+            <span>
+                <input id="alg-Louvain"  data-name="Louvain"  name="select-algorithm" type="checkbox" value="Louvain">
+                <label for="alg-Louvain">Louvain</label>
+            </span>
+        </fieldset>
+
+        <div>
+            <button id="upload-button" class="file-button">上传</button>
+            <button id="close-button" class="file-button">关闭</button>
+        </div>
+    </div>
+     
+</body>
+<script src="../static/js/echarts_index.js"></script>
+
+<script src="../static/js/echarts_data_test.js"></script>
+<script src="../static/js/echarts_graph.js"></script>
+
+<script src="../static/js/echarts_bar_graph.js"></script>
+<script src="../static/js/echarts_upOrDownload.js"></script>
+<!-- <script type="text/javascript" src="../static/js/third_part/saveSvgAsPng.js"></script> -->
+<script src="../static/js/third_part/FileSaver.js"></script>
+<script>
+    console.log(graph);
+    graph = formatGraph(graph);
+    console.log(graph);
+    reload_graph(graph);
+</script>
+</html>

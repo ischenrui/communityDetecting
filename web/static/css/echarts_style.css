@@ -1,0 +1,367 @@
+html, body{
+    overflow: hidden;
+}
+html, body, div, ul, p,table {
+    padding: 0px;
+    margin: 0px;
+    /* border: 0px;
+    color: white;*/
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none; 
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+ul,ol{
+    padding: 0;
+    list-style: none;
+}
+
+
+#container ,#bar_chart_container{
+    position: absolute;
+    top: 60px;
+    left: 180px;
+    bottom: 0;
+    right: 0;
+    /* background-color: #f5f6fa; */
+    background-color: #f3f3f3;
+    z-index: 2;
+    overflow-x: scroll;
+}
+
+#bar_chart{
+    width: 100%;
+    height: 100%;
+    padding: 10px 0px;
+}
+
+#top-tool-bar {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background:#fff;
+    border-bottom: 1px solid #eee;
+    padding-left: 180px;
+}
+
+/* #logo {
+    width: 150px;
+    height: 30px;
+    float: left;
+    background-image: url('../images/favicon.ico');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0;
+} */
+
+
+.top-menu-item {
+    width: 90px;
+    height: 100%;
+    float: left;
+}
+#top-right-bar {
+    float: right;
+    height: 100%;
+}
+#stop-button {
+    width: 120px;
+    float: left;
+    margin-right: 5px;
+    line-height: 60px;
+}
+
+/* loading 图标 */
+#network-status {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    float: left;
+    background-image: url("../images/wait.png");
+    background-size: cover;
+}
+@keyframes calc {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.top-tool-button {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    float: left;
+}
+
+
+
+#left-tool-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    background: #1c1c1c;
+    color: white;
+}
+.logo{
+    height: 60px;
+    background: wheat;
+}
+#tool-list li,#tool-list dt{
+    border-bottom: 1px solid #2c3441;
+    min-height: 50px;
+    transition: border 0.3s linear;
+    -moz-transition: border 0.3s linear; /* Firefox 4 */
+    -webkit-transition: border 0.3s linear; /* Safari 和 Chrome */
+    -o-transition: border 0.3s linear; /* Opera */
+}
+
+#tool-list .menu{
+    padding: 0 10px 0 15px;
+    display: block;
+    background: transparent;
+    line-height: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.menu i:nth-child(2){
+    float: right;
+    margin-top: 17px;
+}
+
+#tool-list dl{
+    display: none;
+    margin: 0;
+}
+#tool-list .active dl{
+    display: block;
+}
+#tool-list dt{
+    box-sizing: border-box;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+#tool-list .active .menu, 
+#tool-list li:hover .menu{
+    border-left: 10px solid #15a848;
+    background: #474c5c;
+}
+
+#tool-list .active .item-list dt:hover,
+.item-list dt.active{
+    border-left: 15px solid #15a848;
+    background: #474c5c;
+}
+
+#tool-list .active .menu i:nth-child(2), 
+#tool-list li:hover .menu i:nth-child(2){
+    color: #15a848;
+}
+@keyframes angle-down{
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes angle-right{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+.attr-button {
+    width: 50%;
+    float: left;
+}
+.high-light {
+    background-color: #34D2DE;
+    /* background-color: steelblue; */
+}
+.cursor-target {
+    cursor: pointer;
+}
+.cursor-add {
+    cursor: crosshair;
+}
+
+.right-box {
+    width: 300px;
+    position: absolute;
+    right: -300px;
+    font-size: 15px;
+    margin: 2px auto;
+    border-radius: 5px;
+    z-index: 99;
+    transition: right 0.3s ease-in-out;
+    -moz-transition: right 0.3s linear; /* Firefox 4 */
+    -webkit-transition: right 0.3s linear; /* Safari 和 Chrome */
+    -o-transition: right 0.3s linear; /* Opera */
+}
+#result-box{
+    background: white;
+    padding: 3px;
+    border: 1px solid #ccc;
+    bottom: 0;
+}
+
+
+#params-box{
+    width: 400px;
+    right: -400px;
+    top: 60px;
+    overflow-y: auto;
+    max-height: 100%;
+    background: white;
+    padding: 10px 0;
+}
+#params-box h3{
+    margin: 5px;
+    text-align: center;
+    
+}
+
+#params-box.show-box,
+#result-box.show-box{
+    right: 0;
+}
+
+.param-container{
+    padding: 4px 10px;
+}
+.param-title{
+    padding: 5px 10px;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+.param-items{
+    line-height: 24px;
+    padding: 4px 0;
+}
+
+#params-box input{
+    float: left;
+    height: 20px;
+}
+.params-key{
+    width: 100px;
+    margin-right: 10px;
+}
+.params-value{
+    width: 220px;
+}
+.param-items i{
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-transition-duration: 1s;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #15a848;
+}
+
+
+#upload-layout {
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 175px);
+    border-radius: 4px;
+    background: #d9edf7;
+    font-size: 15px;
+    text-align: center;
+    padding: 13px;
+    display: none;
+    z-index: 99;
+}
+#upload-top-layout {
+    height: 30px;
+    cursor: move;
+}
+#file-title {
+    float: left;
+}
+#file-close {
+    float: right;
+    cursor: pointer;
+}
+
+#file-close:hover,#close-button:hover {
+    color: black;
+}
+
+#info-file {
+    /* width: 95%; */
+    border-radius: 5px;
+    height: 80px;
+    border:1px solid #ccc;
+    margin: 0 auto;
+}
+#select-file {
+    margin: 5px 0px;
+    padding: 0 2px;
+}
+input[type="file"] {
+    display: none;
+}
+#file-item {
+    height: 100%;
+    padding: 3px;
+    cursor: default;
+}
+#file-name {
+    float: left;
+}
+#file-state {
+    float: right;
+}
+.file-button {
+    background-color: #17a2b8;
+}
+#upload-button {
+    width: 49%;
+}
+#close-button {
+    width: 49%;
+    background-color: #f2dede;
+    color: black;
+}
+#close-button:hover{
+    background-color: #dc3545;
+}
+
+#select-algorithm{
+    padding: 10px 5px;
+    margin: 10px;
+}
+#select-algorithm span{
+    font-size: 16px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+#select-algorithm label, 
+#select-algorithm input[type="checkbox"]{
+    cursor: pointer;
+}
