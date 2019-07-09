@@ -24,7 +24,7 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
         """
     data = {'nodes': [], 'edges': []}
 
-
+    class_list = list(set(g.vs['class']))
     tid_index = {}
     for node in g.vs:
         tnode = {}
@@ -34,7 +34,7 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
         tnode['code'] = node['code']
         tnode['school'] = node['school']
         tnode['insititution'] = node['insititution']
-        tnode['class'] = node['class']
+        tnode['class'] = class_list.index(node['class'])+1
         tnode['centrality'] = node['centrality']
         data['nodes'].append(tnode)
         tid_index[int(node['id'])] = int(node['teacherId'])

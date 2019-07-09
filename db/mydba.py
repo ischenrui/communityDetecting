@@ -49,6 +49,7 @@ class dbutil:
     def getDics(self,sql,params=None):
         conn = self.POOL.connection()
         cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        # cursor = conn.cursor()
         if params is None:
             cursor.execute(sql)
         else :

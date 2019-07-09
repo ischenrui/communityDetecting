@@ -1,4 +1,4 @@
-Creator "igraph version 0.6 Wed Jun  5 19:46:04 2019"
+Creator "igraph version 0.6 Wed Jun  5 19:46:05 2019"
 Version 1
 graph
 [
@@ -6,880 +6,988 @@ graph
   node
   [
     id 0
-    name "周文灵"
-    code "0805"
+    name "刘建波"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112896"
+    insititution "地球与空间科学学院"
+    teacherId "113897"
   ]
   node
   [
     id 1
-    name "白树林"
-    code "0805"
+    name "崔莹"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112772"
+    insititution "地球与空间科学学院"
+    teacherId "113759"
   ]
   node
   [
     id 2
-    name "方竞"
-    code "0805"
+    name "魏春景"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112797"
+    insititution "地球与空间科学学院"
+    teacherId "113801"
   ]
   node
   [
     id 3
-    name "王建祥"
-    code "0805"
+    name "潘懋"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112855"
+    insititution "地球与空间科学学院"
+    teacherId "113778"
   ]
   node
   [
     id 4
-    name "黄琳"
-    code "0805"
+    name "郭艳军"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112808"
+    insititution "地球与空间科学学院"
+    teacherId "113761"
   ]
   node
   [
     id 5
-    name "包为民"
-    code "0805"
+    name "刘楚雄"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112774"
+    insititution "地球与空间科学学院"
+    teacherId "113762"
   ]
   node
   [
     id 6
-    name "苏卫东"
-    code "0805"
+    name "王河锦"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112843"
+    insititution "地球与空间科学学院"
+    teacherId "113799"
   ]
   node
   [
     id 7
-    name "蔡庆东"
-    code "0805"
+    name "江大勇"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112775"
+    insititution "地球与空间科学学院"
+    teacherId "113896"
   ]
   node
   [
     id 8
-    name "史一蓬"
-    code "0805"
+    name "吴泰然"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112841"
+    insititution "地球与空间科学学院"
+    teacherId "113779"
   ]
   node
   [
     id 9
-    name "徐昆"
-    code "0805"
+    name "郭召杰"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112875"
+    insititution "地球与空间科学学院"
+    teacherId "113769"
   ]
   node
   [
     id 10
-    name "陈十一"
-    code "0805"
+    name "吴朝东"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112785"
+    insititution "地球与空间科学学院"
+    teacherId "113802"
   ]
   node
   [
     id 11
-    name "张东晓"
-    code "0805"
+    name "刘树文"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112885"
+    insititution "地球与空间科学学院"
+    teacherId "113885"
   ]
   node
   [
     id 12
-    name "杨延涛"
-    code "0805"
+    name "韩宝福"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112879"
+    insititution "地球与空间科学学院"
+    teacherId "113770"
   ]
   node
   [
     id 13
-    name "李存标"
-    code "0805"
+    name "张志诚"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112815"
+    insititution "地球与空间科学学院"
+    teacherId "113785"
   ]
   node
   [
     id 14
-    name "朱凤荣"
-    code "0805"
+    name "刘玉琳"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112897"
+    insititution "地球与空间科学学院"
+    teacherId "113887"
   ]
   node
   [
     id 15
-    name "李恒"
-    code "0805"
+    name "张元元"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112818"
+    insititution "地球与空间科学学院"
+    teacherId "113786"
   ]
   node
   [
     id 16
-    name "段小洁"
-    code "0805"
+    name "张立飞"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112794"
+    insititution "地球与空间科学学院"
+    teacherId "113805"
   ]
   node
   [
     id 17
-    name "曹安源"
-    code "0805"
+    name "古丽冰"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112776"
+    insititution "地球与空间科学学院"
+    teacherId "113806"
   ]
   node
   [
     id 18
-    name "韩平畴"
-    code "0805"
+    name "李秋根"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112803"
+    insititution "地球与空间科学学院"
+    teacherId "113882"
   ]
   node
   [
     id 19
-    name "张艳锋"
-    code "0805"
+    name "孙元林"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112890"
+    insititution "地球与空间科学学院"
+    teacherId "113900"
   ]
   node
   [
     id 20
-    name "常海滨"
-    code "0805"
+    name "季建清"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112777"
+    insititution "地球与空间科学学院"
+    teacherId "113775"
   ]
   node
   [
     id 21
-    name "段志生"
-    code "0805"
+    name "周晶"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112795"
+    insititution "地球与空间科学学院"
+    teacherId "113810"
   ]
   node
   [
     id 22
-    name "陈关荣"
-    code "0805"
+    name "黄宝玲"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112779"
+    insititution "地球与空间科学学院"
+    teacherId "113807"
   ]
   node
   [
     id 23
-    name "李植"
-    code "0805"
+    name "侯贵廷"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112821"
+    insititution "地球与空间科学学院"
+    teacherId "113772"
   ]
   node
   [
     id 24
-    name "陈国谦"
-    code "0805"
+    name "李江海"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112780"
+    insititution "地球与空间科学学院"
+    teacherId "113776"
   ]
   node
   [
     id 25
-    name "陈建霖"
-    code "0805"
+    name "侯建军"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112782"
+    insititution "地球与空间科学学院"
+    teacherId "113773"
   ]
   node
   [
     id 26
-    name "陈璞"
-    code "0805"
+    name "赵永红"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112784"
+    insititution "地球与空间科学学院"
+    teacherId "113864"
   ]
   node
   [
     id 27
-    name "李水乡"
-    code "0805"
+    name "高克勤"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112819"
+    insititution "地球与空间科学学院"
+    teacherId "113894"
   ]
   node
   [
     id 28
-    name "孙树立"
-    code "0805"
+    name "张进江"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112845"
+    insititution "地球与空间科学学院"
+    teacherId "113782"
   ]
   node
   [
     id 29
-    name "周超"
-    code "0805"
+    name "马芳"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112894"
+    insititution "地球与空间科学学院"
+    teacherId "113809"
   ]
   node
   [
     id 30
-    name "肖左利"
-    code "0805"
+    name "杜世宏"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112871"
+    insititution "地球与空间科学学院"
+    teacherId "113820"
   ]
   node
   [
     id 31
-    name "陶建军"
-    code "0805"
+    name "郑海飞"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112850"
+    insititution "地球与空间科学学院"
+    teacherId "113890"
   ]
   node
   [
     id 32
-    name "佘振苏"
-    code "0805"
+    name "徐备"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112840"
+    insititution "地球与空间科学学院"
+    teacherId "113780"
   ]
   node
   [
     id 33
-    name "米建春"
-    code "0805"
+    name "王长秋"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112833"
+    insititution "地球与空间科学学院"
+    teacherId "113800"
   ]
   node
   [
     id 34
-    name "陈正"
-    code "0805"
+    name "陈衍景"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112787"
+    insititution "地球与空间科学学院"
+    teacherId "113787"
   ]
   node
   [
     id 35
-    name "杨越"
-    code "0805"
+    name "秦善"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112881"
+    insititution "地球与空间科学学院"
+    teacherId "113796"
   ]
   node
   [
     id 36
-    name "刘剑飞"
-    code "0805"
+    name "赖勇"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112825"
+    insititution "地球与空间科学学院"
+    teacherId "113790"
   ]
   node
   [
     id 37
-    name "陈永强"
-    code "0805"
+    name "苗国均"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112786"
+    insititution "地球与空间科学学院"
+    teacherId "113813"
   ]
   node
   [
     id 38
-    name "濮国梁"
-    code "0805"
+    name "刘平平"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112837"
+    insititution "地球与空间科学学院"
+    teacherId "113793"
   ]
   node
   [
     id 39
-    name "程承旗"
-    code "0805"
+    name "李文博"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112788"
+    insititution "地球与空间科学学院"
+    teacherId "113791"
   ]
   node
   [
     id 40
-    name "王启宁"
-    code "0805"
+    name "郝瑞霞"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112859"
+    insititution "地球与空间科学学院"
+    teacherId "113880"
   ]
   node
   [
     id 41
-    name "楚天广"
-    code "0805"
+    name "李艳"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112789"
+    insititution "地球与空间科学学院"
+    teacherId "113792"
   ]
   node
   [
     id 42
-    name "谢广明"
-    code "0805"
+    name "鲁安怀"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112872"
+    insititution "地球与空间科学学院"
+    teacherId "113794"
   ]
   node
   [
     id 43
-    name "王龙"
-    code "0805"
+    name "杨斌"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112857"
+    insititution "地球与空间科学学院"
+    teacherId "113812"
   ]
   node
   [
     id 44
-    name "李长辉"
-    code "0805"
+    name "李小犁"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112814"
+    insititution "地球与空间科学学院"
+    teacherId "113808"
   ]
   node
   [
     id 45
-    name "戴志飞"
-    code "0805"
+    name "吕增"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112791"
+    insititution "地球与空间科学学院"
+    teacherId "113795"
   ]
   node
   [
     id 46
-    name "任秋实"
-    code "0805"
+    name "宋述光"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112838"
+    insititution "地球与空间科学学院"
+    teacherId "113797"
   ]
   node
   [
     id 47
-    name "易新"
-    code "0805"
+    name "张贵宾"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112882"
+    insititution "地球与空间科学学院"
+    teacherId "113889"
   ]
   node
   [
     id 48
-    name "段慧玲"
-    code "0805"
+    name "朱文萍"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112793"
+    insititution "地球与空间科学学院"
+    teacherId "113811"
   ]
   node
   [
     id 49
-    name "孙智利"
-    code "0805"
+    name "田伟"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112846"
+    insititution "地球与空间科学学院"
+    teacherId "113798"
   ]
   node
   [
     id 50
-    name "吕鹏宇"
-    code "0805"
+    name "朱永峰"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112832"
+    insititution "地球与空间科学学院"
+    teacherId "113892"
   ]
   node
   [
     id 51
-    name "康炜"
-    code "0805"
+    name "刘琼"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112812"
+    insititution "地球与空间科学学院"
+    teacherId "113884"
   ]
   node
   [
     id 52
-    name "李忠奎"
-    code "0805"
+    name "刘曦"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112822"
+    insititution "地球与空间科学学院"
+    teacherId "113886"
   ]
   node
   [
     id 53
-    name "耿志勇"
-    code "0805"
+    name "张飞舟"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112801"
+    insititution "地球与空间科学学院"
+    teacherId "113843"
   ]
   node
   [
     id 54
-    name "杨剑影"
-    code "0805"
+    name "陈秀万"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112878"
+    insititution "地球与空间科学学院"
+    teacherId "113817"
   ]
   node
   [
     id 55
-    name "王金枝"
-    code "0805"
+    name "孙敏"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112856"
+    insititution "地球与空间科学学院"
+    teacherId "113837"
   ]
   node
   [
     id 56
-    name "杨莹"
-    code "0805"
+    name "邬伦"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112880"
+    insititution "地球与空间科学学院"
+    teacherId "113840"
   ]
   node
   [
     id 57
-    name "李法新"
-    code "0805"
+    name "范闻捷"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112817"
+    insititution "地球与空间科学学院"
+    teacherId "113822"
   ]
   node
   [
     id 58
-    name "方岱宁"
-    code "0805"
+    name "崔要奎"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112796"
+    insititution "地球与空间科学学院"
+    teacherId "113819"
   ]
   node
   [
     id 59
-    name "裴永茂"
-    code "0805"
+    name "李梅"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112835"
+    insititution "地球与空间科学学院"
+    teacherId "113827"
   ]
   node
   [
     id 60
-    name "郑玉峰"
-    code "0805"
+    name "秦其明"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112893"
+    insititution "地球与空间科学学院"
+    teacherId "113835"
   ]
   node
   [
     id 61
-    name "张珏"
-    code "0805"
+    name "任华忠"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112887"
+    insititution "地球与空间科学学院"
+    teacherId "113836"
   ]
   node
   [
     id 62
-    name "席建忠"
-    code "0805"
+    name "法文哲"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112867"
+    insititution "地球与空间科学学院"
+    teacherId "113821"
   ]
   node
   [
     id 63
-    name "黄建永"
-    code "0805"
+    name "刘瑜"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112807"
+    insititution "地球与空间科学学院"
+    teacherId "113832"
   ]
   node
   [
     id 64
-    name "熊春阳"
-    code "0805"
+    name "高勇"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112874"
+    insititution "地球与空间科学学院"
+    teacherId "113823"
   ]
   node
   [
     id 65
-    name "荣起国"
-    code "0805"
+    name "曾琪明"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112839"
+    insititution "地球与空间科学学院"
+    teacherId "113842"
   ]
   node
   [
     id 66
-    name "傅缤"
-    code "0805"
+    name "张毅"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112798"
+    insititution "地球与空间科学学院"
+    teacherId "113845"
   ]
   node
   [
     id 67
-    name "谭文长"
-    code "0805"
+    name "田原"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112847"
+    insititution "地球与空间科学学院"
+    teacherId "113838"
   ]
   node
   [
     id 68
-    name "符策基"
-    code "0805"
+    name "黄舟"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112799"
+    insititution "地球与空间科学学院"
+    teacherId "113825"
   ]
   node
   [
     id 69
-    name "贺贤土"
-    code "0805"
+    name "焦健"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112804"
+    insititution "地球与空间科学学院"
+    teacherId "113826"
   ]
   node
   [
     id 70
-    name "侯仰龙"
-    code "0805"
+    name "毛善君"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112805"
+    insititution "地球与空间科学学院"
+    teacherId "113834"
   ]
   node
   [
     id 71
-    name "张青"
-    code "0805"
+    name "童庆禧"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112884"
+    insititution "地球与空间科学学院"
+    teacherId "113839"
   ]
   node
   [
     id 72
-    name "黄迅"
-    code "0805"
+    name "林沂"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112809"
+    insititution "地球与空间科学学院"
+    teacherId "113831"
   ]
   node
   [
     id 73
-    name "刘才山"
-    code "0805"
+    name "晏磊"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112823"
+    insititution "地球与空间科学学院"
+    teacherId "113841"
   ]
   node
   [
     id 74
-    name "黄岩谊"
-    code "0805"
+    name "赵红颖"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112810"
+    insititution "地球与空间科学学院"
+    teacherId "113846"
   ]
   node
   [
     id 75
-    name "霍云龙"
-    code "0805"
+    name "刘岳峰"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112811"
+    insititution "地球与空间科学学院"
+    teacherId "113833"
   ]
   node
   [
     id 76
-    name "孙强"
-    code "0805"
+    name "张显峰"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112844"
+    insititution "地球与空间科学学院"
+    teacherId "113844"
   ]
   node
   [
     id 77
-    name "李星国"
-    code "0805"
+    name "盖增喜"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112820"
+    insititution "地球与空间科学学院"
+    teacherId "113851"
   ]
   node
   [
     id 78
-    name "邹如强"
-    code "0805"
+    name "陈彦超"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112899"
+    insititution "地球与空间科学学院"
+    teacherId "113847"
   ]
   node
   [
     id 79
-    name "卢海龙"
-    code "0805"
+    name "陈永顺"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112830"
+    insititution "地球与空间科学学院"
+    teacherId "113848"
   ]
   node
   [
     id 80
-    name "吴建国"
-    code "0805"
+    name "张献兵"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112865"
+    insititution "地球与空间科学学院"
+    teacherId "113860"
   ]
   node
   [
     id 81
-    name "彭一杰"
-    code "0805"
+    name "冯永革"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112836"
+    insititution "地球与空间科学学院"
+    teacherId "113850"
   ]
   node
   [
     id 82
-    name "席鹏"
-    code "0805"
+    name "张海明"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112868"
+    insititution "地球与空间科学学院"
+    teacherId "113859"
   ]
   node
   [
     id 83
-    name "朱怀球"
-    code "0805"
+    name "岳汉"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112898"
+    insititution "地球与空间科学学院"
+    teacherId "113857"
   ]
   node
   [
     id 84
-    name "许晓云"
-    code "0805"
+    name "周仕勇"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112876"
+    insititution "地球与空间科学学院"
+    teacherId "113856"
   ]
   node
   [
     id 85
-    name "宋洁"
-    code "0805"
+    name "雷军"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112842"
+    insititution "地球与空间科学学院"
+    teacherId "113854"
   ]
   node
   [
     id 86
-    name "张玺"
-    code "0805"
+    name "赵克常"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112888"
+    insititution "地球与空间科学学院"
+    teacherId "113863"
   ]
   node
   [
     id 87
-    name "唐少强"
-    code "0805"
+    name "郝永强"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112848"
+    insititution "地球与空间科学学院"
+    teacherId "113867"
   ]
   node
   [
     id 88
-    name "郑春苗"
-    code "0805"
+    name "陈鸿飞"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112891"
+    insititution "地球与空间科学学院"
+    teacherId "113865"
   ]
   node
   [
     id 89
-    name "王习东"
-    code "0805"
+    name "施伟红"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112860"
+    insititution "地球与空间科学学院"
+    teacherId "113869"
   ]
   node
   [
     id 90
-    name "王昊"
-    code "0805"
+    name "邹鸿"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112853"
+    insititution "地球与空间科学学院"
+    teacherId "113877"
   ]
   node
   [
     id 91
-    name "魏悦广"
-    code "0805"
+    name "宗秋刚"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112863"
+    insititution "地球与空间科学学院"
+    teacherId "113876"
   ]
   node
   [
     id 92
-    name "温庆志"
-    code "0805"
+    name "于向前"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112864"
+    insititution "地球与空间科学学院"
+    teacherId "113873"
   ]
   node
   [
     id 93
-    name "于海峰"
-    code "0805"
+    name "傅绥燕"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112883"
+    insititution "地球与空间科学学院"
+    teacherId "113866"
   ]
   node
   [
     id 94
-    name "杨槐"
-    code "0805"
+    name "谢伦"
+    code "0708"
     school "北京大学"
-    insititution "工学院"
-    teacherId "112877"
+    insititution "地球与空间科学学院"
+    teacherId "113872"
+  ]
+  node
+  [
+    id 95
+    name "涂传诒"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113870"
+  ]
+  node
+  [
+    id 96
+    name "张东和"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113874"
+  ]
+  node
+  [
+    id 97
+    name "何建森"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113868"
+  ]
+  node
+  [
+    id 98
+    name "田晖"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113878"
+  ]
+  node
+  [
+    id 99
+    name "王玲华"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113871"
+  ]
+  node
+  [
+    id 100
+    name "周煦之"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113875"
+  ]
+  node
+  [
+    id 101
+    name "李宝生"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113881"
+  ]
+  node
+  [
+    id 102
+    name "沈冰"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113899"
+  ]
+  node
+  [
+    id 103
+    name "白志强"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113893"
+  ]
+  node
+  [
+    id 104
+    name "马学平"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113898"
+  ]
+  node
+  [
+    id 105
+    name "孙作玉"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113901"
+  ]
+  node
+  [
+    id 106
+    name "王德明"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113902"
+  ]
+  node
+  [
+    id 107
+    name "薛进庄"
+    code "0708"
+    school "北京大学"
+    insititution "地球与空间科学学院"
+    teacherId "113903"
   ]
   edge
   [
     source 1
     target 0
-    paper 0
+    paper 1
     patent 0
-    project 3
-    weight 3
+    project 0
+    weight 1
   ]
   edge
   [
     source 2
     target 1
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 3
-    target 1
     paper 1
     patent 0
     project 0
@@ -887,53 +995,44 @@ graph
   ]
   edge
   [
-    source 5
-    target 4
-    paper 0
+    source 4
+    target 3
+    paper 6
     patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 7
-    target 6
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 8
-    target 7
-    paper 0
-    patent 0
-    project 2
-    weight 2
-  ]
-  edge
-  [
-    source 9
-    target 7
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 10
-    target 7
-    paper 0
-    patent 0
-    project 6
+    project 0
     weight 6
   ]
   edge
   [
-    source 11
-    target 7
+    source 5
+    target 3
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 6
+    target 5
+    paper 1
+    patent 0
+    project 1
+    weight 2
+  ]
+  edge
+  [
+    source 7
+    target 5
+    paper 1
+    patent 0
+    project 3
+    weight 4
+  ]
+  edge
+  [
+    source 9
+    target 8
     paper 0
     patent 0
     project 2
@@ -941,26 +1040,44 @@ graph
   ]
   edge
   [
-    source 12
-    target 7
-    paper 0
+    source 10
+    target 9
+    paper 3
     patent 0
-    project 2
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 11
+    target 9
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 12
+    target 9
+    paper 2
+    patent 0
+    project 0
     weight 2
   ]
   edge
   [
     source 13
-    target 7
-    paper 1
+    target 9
+    paper 17
     patent 0
-    project 0
-    weight 1
+    project 3
+    weight 20
   ]
   edge
   [
     source 14
-    target 7
+    target 9
     paper 1
     patent 0
     project 0
@@ -969,52 +1086,16 @@ graph
   edge
   [
     source 15
-    target 7
-    paper 1
+    target 9
+    paper 3
     patent 0
-    project 0
-    weight 1
+    project 1
+    weight 4
   ]
   edge
   [
-    source 17
-    target 16
-    paper 0
-    patent 1
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 18
-    target 17
-    paper 0
-    patent 2
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 19
-    target 17
-    paper 0
-    patent 2
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 20
-    target 11
-    paper 0
-    patent 0
-    project 3
-    weight 3
-  ]
-  edge
-  [
-    source 20
-    target 15
+    source 16
+    target 12
     paper 0
     patent 0
     project 1
@@ -1022,8 +1103,98 @@ graph
   ]
   edge
   [
-    source 22
-    target 21
+    source 17
+    target 12
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 12
+    target 8
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 12
+    target 11
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 18
+    target 12
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 19
+    target 12
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 20
+    target 12
+    paper 3
+    patent 0
+    project 1
+    weight 4
+  ]
+  edge
+  [
+    source 21
+    target 12
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 13
+    target 12
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 23
+    target 22
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 23
+    target 11
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 23
+    target 14
     paper 1
     patent 0
     project 0
@@ -1033,51 +1204,87 @@ graph
   [
     source 24
     target 23
-    paper 1
+    paper 5
     patent 0
-    project 4
-    weight 5
+    project 3
+    weight 8
   ]
   edge
   [
     source 25
-    target 3
-    paper 0
+    target 11
+    paper 2
     patent 0
-    project 1
-    weight 1
+    project 0
+    weight 2
   ]
   edge
   [
     source 26
-    target 3
-    paper 0
+    target 25
+    paper 1
     patent 0
-    project 1
+    project 0
     weight 1
   ]
   edge
   [
     source 27
-    target 26
-    paper 0
+    target 20
+    paper 1
     patent 0
-    project 1
+    project 0
     weight 1
   ]
   edge
   [
     source 28
-    target 26
-    paper 12
+    target 20
+    paper 2
     patent 0
-    project 2
-    weight 14
+    project 1
+    weight 3
+  ]
+  edge
+  [
+    source 21
+    target 20
+    paper 5
+    patent 0
+    project 0
+    weight 5
   ]
   edge
   [
     source 29
-    target 10
+    target 24
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 24
+    target 11
+    paper 1
+    patent 0
+    project 1
+    weight 2
+  ]
+  edge
+  [
+    source 24
+    target 14
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 8
+    target 3
     paper 0
     patent 0
     project 1
@@ -1085,44 +1292,44 @@ graph
   ]
   edge
   [
-    source 30
-    target 10
-    paper 0
+    source 3
+    target 0
+    paper 2
     patent 0
-    project 4
-    weight 4
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 30
+    target 3
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 16
+    target 3
+    paper 3
+    patent 0
+    project 2
+    weight 5
   ]
   edge
   [
     source 31
-    target 10
-    paper 0
+    target 3
+    paper 1
     patent 0
-    project 3
-    weight 3
+    project 0
+    weight 1
   ]
   edge
   [
-    source 10
-    target 6
-    paper 0
-    patent 0
-    project 4
-    weight 4
-  ]
-  edge
-  [
-    source 32
-    target 10
-    paper 0
-    patent 0
-    project 3
-    weight 3
-  ]
-  edge
-  [
-    source 33
-    target 10
+    source 16
+    target 8
     paper 0
     patent 0
     project 2
@@ -1131,7 +1338,25 @@ graph
   edge
   [
     source 13
-    target 10
+    target 8
+    paper 0
+    patent 0
+    project 5
+    weight 5
+  ]
+  edge
+  [
+    source 11
+    target 8
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 32
+    target 16
     paper 0
     patent 0
     project 3
@@ -1139,8 +1364,89 @@ graph
   ]
   edge
   [
-    source 12
+    source 33
+    target 32
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 32
+    target 31
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 28
+    target 16
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 28
+    target 2
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 28
+    target 11
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 34
+    target 28
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 13
     target 10
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 13
+    target 11
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 14
+    target 13
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 34
+    target 16
     paper 0
     patent 0
     project 2
@@ -1149,29 +1455,38 @@ graph
   edge
   [
     source 34
-    target 10
-    paper 3
+    target 22
+    paper 1
     patent 0
-    project 0
-    weight 3
+    project 1
+    weight 2
   ]
   edge
   [
     source 35
-    target 10
-    paper 4
+    target 34
+    paper 2
     patent 0
-    project 1
-    weight 5
+    project 0
+    weight 2
   ]
   edge
   [
-    source 10
-    target 8
+    source 34
+    target 14
     paper 1
     patent 0
-    project 4
-    weight 5
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 36
+    target 34
+    paper 2
+    patent 0
+    project 1
+    weight 3
   ]
   edge
   [
@@ -1184,98 +1499,134 @@ graph
   ]
   edge
   [
-    source 37
-    target 4
+    source 38
+    target 36
     paper 0
     patent 0
     project 1
     weight 1
-  ]
-  edge
-  [
-    source 37
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 37
-    target 27
-    paper 1
-    patent 0
-    project 1
-    weight 2
-  ]
-  edge
-  [
-    source 35
-    target 34
-    paper 1
-    patent 0
-    project 1
-    weight 2
   ]
   edge
   [
     source 39
-    target 38
+    target 36
     paper 1
-    patent 4
+    patent 0
     project 0
-    weight 5
+    weight 1
   ]
   edge
   [
     source 41
     target 40
     paper 0
-    patent 3
-    project 1
-    weight 4
+    patent 7
+    project 0
+    weight 7
+  ]
+  edge
+  [
+    source 41
+    target 33
+    paper 2
+    patent 14
+    project 2
+    weight 18
   ]
   edge
   [
     source 42
     target 41
-    paper 0
-    patent 6
+    paper 7
+    patent 34
     project 2
-    weight 8
+    weight 43
   ]
   edge
   [
     source 43
-    target 41
-    paper 1
-    patent 6
+    target 42
+    paper 0
+    patent 0
     project 1
-    weight 8
+    weight 1
   ]
   edge
   [
-    source 41
-    target 4
+    source 42
+    target 6
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 42
+    target 35
     paper 9
     patent 0
+    project 0
+    weight 9
+  ]
+  edge
+  [
+    source 42
+    target 33
+    paper 12
+    patent 20
     project 2
-    weight 11
+    weight 34
+  ]
+  edge
+  [
+    source 42
+    target 40
+    paper 5
+    patent 10
+    project 1
+    weight 16
   ]
   edge
   [
     source 45
     target 44
     paper 0
-    patent 2
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 45
+    target 16
+    paper 6
+    patent 0
+    project 4
+    weight 10
+  ]
+  edge
+  [
+    source 46
+    target 35
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 35
+    target 33
+    paper 2
+    patent 0
     project 0
     weight 2
   ]
   edge
   [
     source 46
-    target 45
+    target 44
     paper 0
     patent 0
     project 1
@@ -1283,12 +1634,30 @@ graph
   ]
   edge
   [
-    source 48
-    target 47
+    source 46
+    target 2
     paper 0
     patent 0
     project 1
     weight 1
+  ]
+  edge
+  [
+    source 46
+    target 16
+    paper 3
+    patent 0
+    project 4
+    weight 7
+  ]
+  edge
+  [
+    source 47
+    target 46
+    paper 3
+    patent 0
+    project 2
+    weight 5
   ]
   edge
   [
@@ -1301,34 +1670,7 @@ graph
   ]
   edge
   [
-    source 50
-    target 48
-    paper 0
-    patent 7
-    project 2
-    weight 9
-  ]
-  edge
-  [
-    source 48
-    target 3
-    paper 2
-    patent 0
-    project 4
-    weight 6
-  ]
-  edge
-  [
-    source 51
-    target 48
-    paper 2
-    patent 0
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 40
+    source 49
     target 16
     paper 0
     patent 0
@@ -1337,647 +1679,26 @@ graph
   ]
   edge
   [
-    source 52
-    target 21
-    paper 0
-    patent 0
-    project 3
-    weight 3
-  ]
-  edge
-  [
-    source 53
-    target 21
-    paper 0
-    patent 0
-    project 3
-    weight 3
-  ]
-  edge
-  [
-    source 43
-    target 21
-    paper 2
-    patent 0
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 54
-    target 21
-    paper 2
-    patent 0
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 55
-    target 21
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 56
-    target 21
-    paper 1
-    patent 0
-    project 1
-    weight 2
-  ]
-  edge
-  [
-    source 21
-    target 4
-    paper 13
-    patent 0
-    project 5
-    weight 18
-  ]
-  edge
-  [
-    source 58
-    target 57
-    paper 0
-    patent 5
-    project 2
-    weight 7
-  ]
-  edge
-  [
-    source 58
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 59
-    target 58
-    paper 2
-    patent 4
-    project 3
-    weight 9
-  ]
-  edge
-  [
-    source 60
+    source 49
     target 2
-    paper 0
-    patent 1
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 61
-    target 2
-    paper 0
-    patent 128
-    project 1
-    weight 129
-  ]
-  edge
-  [
-    source 62
-    target 2
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 63
-    target 2
-    paper 0
-    patent 8
-    project 2
-    weight 10
-  ]
-  edge
-  [
-    source 64
-    target 2
-    paper 4
-    patent 9
-    project 3
-    weight 16
-  ]
-  edge
-  [
-    source 65
-    target 2
-    paper 2
-    patent 0
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 66
-    target 0
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 68
-    target 67
-    paper 7
-    patent 0
-    project 2
-    weight 9
-  ]
-  edge
-  [
-    source 54
-    target 53
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 53
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 56
-    target 53
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 55
-    target 53
-    paper 2
-    patent 0
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 53
-    target 4
-    paper 6
-    patent 0
-    project 3
-    weight 9
-  ]
-  edge
-  [
-    source 69
-    target 51
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 70
-    target 46
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 71
-    target 63
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 64
-    target 63
-    paper 2
-    patent 8
-    project 0
-    weight 10
-  ]
-  edge
-  [
-    source 52
-    target 4
-    paper 0
-    patent 0
-    project 2
-    weight 2
-  ]
-  edge
-  [
-    source 72
-    target 4
-    paper 0
-    patent 0
-    project 2
-    weight 2
-  ]
-  edge
-  [
-    source 54
-    target 4
-    paper 1
-    patent 0
-    project 4
-    weight 5
-  ]
-  edge
-  [
-    source 43
-    target 4
-    paper 4
-    patent 0
-    project 1
-    weight 5
-  ]
-  edge
-  [
-    source 55
-    target 4
-    paper 6
-    patent 0
-    project 9
-    weight 15
-  ]
-  edge
-  [
-    source 56
-    target 4
-    paper 2
-    patent 0
-    project 8
-    weight 10
-  ]
-  edge
-  [
-    source 73
-    target 4
-    paper 1
-    patent 0
-    project 1
-    weight 2
-  ]
-  edge
-  [
-    source 74
-    target 62
-    paper 0
-    patent 2
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 75
-    target 67
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 51
-    target 8
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 50
-    target 44
-    paper 0
-    patent 2
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 46
-    target 44
-    paper 1
-    patent 18
-    project 1
-    weight 20
-  ]
-  edge
-  [
-    source 14
-    target 13
-    paper 0
-    patent 0
-    project 2
-    weight 2
-  ]
-  edge
-  [
-    source 30
-    target 13
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 32
-    target 13
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 57
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 59
-    target 57
-    paper 1
-    patent 4
-    project 0
-    weight 5
-  ]
-  edge
-  [
-    source 15
-    target 11
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 28
-    target 27
     paper 1
     patent 0
     project 2
     weight 3
-  ]
-  edge
-  [
-    source 36
-    target 27
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 77
-    target 76
-    paper 0
-    patent 0
-    project 2
-    weight 2
-  ]
-  edge
-  [
-    source 23
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 56
-    target 52
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 55
-    target 52
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 36
-    target 28
-    paper 2
-    patent 0
-    project 1
-    weight 3
-  ]
-  edge
-  [
-    source 79
-    target 78
-    paper 1
-    patent 0
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 50
-    target 46
-    paper 0
-    patent 2
-    project 0
-    weight 2
-  ]
-  edge
-  [
-    source 81
-    target 80
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 82
-    target 46
-    paper 0
-    patent 1
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 62
-    target 46
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 65
-    target 3
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 83
-    target 32
-    paper 0
-    patent 1
-    project 1
-    weight 2
-  ]
-  edge
-  [
-    source 32
-    target 6
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 32
-    target 31
-    paper 1
-    patent 0
-    project 1
-    weight 2
-  ]
-  edge
-  [
-    source 32
-    target 8
-    paper 1
-    patent 0
-    project 2
-    weight 3
-  ]
-  edge
-  [
-    source 12
-    target 8
-    paper 0
-    patent 0
-    project 4
-    weight 4
-  ]
-  edge
-  [
-    source 30
-    target 8
-    paper 5
-    patent 0
-    project 0
-    weight 5
-  ]
-  edge
-  [
-    source 85
-    target 84
-    paper 0
-    patent 1
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 86
-    target 85
-    paper 0
-    patent 1
-    project 0
-    weight 1
-  ]
-  edge
-  [
-    source 31
-    target 6
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 87
-    target 76
-    paper 1
-    patent 0
-    project 0
-    weight 1
   ]
   edge
   [
     source 49
-    target 31
-    paper 0
-    patent 0
-    project 3
-    weight 3
-  ]
-  edge
-  [
-    source 88
-    target 67
-    paper 0
+    target 11
+    paper 1
     patent 0
     project 1
-    weight 1
-  ]
-  edge
-  [
-    source 67
-    target 12
-    paper 0
-    patent 0
-    project 2
     weight 2
   ]
   edge
   [
-    source 31
-    target 14
+    source 22
+    target 6
     paper 0
     patent 0
     project 1
@@ -1985,44 +1706,17 @@ graph
   ]
   edge
   [
-    source 90
-    target 89
-    paper 0
-    patent 25
-    project 0
-    weight 25
-  ]
-  edge
-  [
-    source 91
-    target 3
-    paper 0
+    source 16
+    target 6
+    paper 1
     patent 0
-    project 1
-    weight 1
+    project 2
+    weight 3
   ]
   edge
   [
-    source 56
-    target 55
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 55
-    target 54
-    paper 0
-    patent 0
-    project 1
-    weight 1
-  ]
-  edge
-  [
-    source 43
-    target 42
+    source 40
+    target 33
     paper 0
     patent 7
     project 0
@@ -2030,43 +1724,304 @@ graph
   ]
   edge
   [
-    source 43
-    target 40
+    source 33
+    target 2
     paper 0
-    patent 4
-    project 2
-    weight 6
-  ]
-  edge
-  [
-    source 42
-    target 40
-    paper 1
-    patent 4
+    patent 0
     project 1
+    weight 1
+  ]
+  edge
+  [
+    source 16
+    target 2
+    paper 7
+    patent 0
+    project 7
+    weight 14
+  ]
+  edge
+  [
+    source 44
+    target 2
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 48
+    target 2
+    paper 1
+    patent 0
+    project 3
+    weight 4
+  ]
+  edge
+  [
+    source 19
+    target 16
+    paper 0
+    patent 0
+    project 3
+    weight 3
+  ]
+  edge
+  [
+    source 50
+    target 16
+    paper 0
+    patent 0
+    project 6
     weight 6
   ]
   edge
   [
-    source 89
-    target 78
+    source 16
+    target 11
     paper 0
-    patent 2
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 51
+    target 16
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 18
+    target 16
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 44
+    target 16
+    paper 3
+    patent 0
+    project 4
+    weight 7
+  ]
+  edge
+  [
+    source 16
+    target 0
+    paper 2
+    patent 0
+    project 3
+    weight 5
+  ]
+  edge
+  [
+    source 52
+    target 16
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 47
+    target 16
+    paper 4
+    patent 0
+    project 3
+    weight 7
+  ]
+  edge
+  [
+    source 31
+    target 16
+    paper 1
+    patent 0
+    project 1
+    weight 2
+  ]
+  edge
+  [
+    source 50
+    target 17
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 37
+    target 22
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 22
+    target 14
+    paper 2
+    patent 0
     project 0
     weight 2
   ]
   edge
   [
-    source 92
+    source 29
     target 11
     paper 0
-    patent 15
-    project 0
-    weight 15
+    patent 0
+    project 2
+    weight 2
   ]
   edge
   [
-    source 71
+    source 29
+    target 14
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 37
+    target 29
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 50
+    target 21
+    paper 3
+    patent 0
+    project 1
+    weight 4
+  ]
+  edge
+  [
+    source 37
+    target 14
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 54
+    target 53
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 55
+    target 54
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 56
+    target 54
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 58
+    target 57
+    paper 1
+    patent 0
+    project 1
+    weight 2
+  ]
+  edge
+  [
+    source 59
+    target 30
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 60
+    target 30
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 62
+    target 61
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 62
+    target 60
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 60
+    target 57
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 57
+    target 56
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 64
+    target 63
+    paper 0
+    patent 1
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 65
     target 64
     paper 0
     patent 0
@@ -2075,29 +2030,803 @@ graph
   ]
   edge
   [
-    source 86
-    target 84
-    paper 0
+    source 64
+    target 56
+    paper 3
+    patent 0
+    project 2
+    weight 5
+  ]
+  edge
+  [
+    source 66
+    target 64
+    paper 3
     patent 1
     project 1
+    weight 5
+  ]
+  edge
+  [
+    source 67
+    target 64
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 68
+    target 66
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 68
+    target 63
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 69
+    target 65
+    paper 11
+    patent 3
+    project 4
+    weight 18
+  ]
+  edge
+  [
+    source 70
+    target 59
+    paper 5
+    patent 0
+    project 0
+    weight 5
+  ]
+  edge
+  [
+    source 72
+    target 71
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 73
+    target 72
+    paper 2
+    patent 10
+    project 0
+    weight 12
+  ]
+  edge
+  [
+    source 66
+    target 63
+    paper 0
+    patent 1
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 63
+    target 56
+    paper 2
+    patent 0
+    project 3
+    weight 5
+  ]
+  edge
+  [
+    source 75
+    target 74
+    paper 0
+    patent 2
+    project 0
     weight 2
+  ]
+  edge
+  [
+    source 75
+    target 53
+    paper 0
+    patent 3
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 75
+    target 56
+    paper 2
+    patent 0
+    project 1
+    weight 3
+  ]
+  edge
+  [
+    source 75
+    target 73
+    paper 4
+    patent 5
+    project 0
+    weight 9
+  ]
+  edge
+  [
+    source 70
+    target 55
+    paper 1
+    patent 1
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 70
+    target 56
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 61
+    target 60
+    paper 2
+    patent 2
+    project 0
+    weight 4
+  ]
+  edge
+  [
+    source 74
+    target 60
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 76
+    target 55
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 73
+    target 55
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 55
+    target 53
+    paper 4
+    patent 0
+    project 1
+    weight 5
+  ]
+  edge
+  [
+    source 67
+    target 66
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 67
+    target 56
+    paper 4
+    patent 0
+    project 1
+    weight 5
+  ]
+  edge
+  [
+    source 71
+    target 56
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 73
+    target 71
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 66
+    target 56
+    paper 2
+    patent 0
+    project 1
+    weight 3
+  ]
+  edge
+  [
+    source 73
+    target 53
+    paper 5
+    patent 5
+    project 0
+    weight 10
+  ]
+  edge
+  [
+    source 74
+    target 73
+    paper 10
+    patent 15
+    project 0
+    weight 25
+  ]
+  edge
+  [
+    source 78
+    target 77
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 79
+    target 78
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 80
+    target 78
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 81
+    target 78
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 80
+    target 79
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 82
+    target 79
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 79
+    target 77
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 81
+    target 79
+    paper 3
+    patent 0
+    project 2
+    weight 5
+  ]
+  edge
+  [
+    source 83
+    target 79
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 84
+    target 79
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 81
+    target 77
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 81
+    target 80
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 84
+    target 77
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 82
+    target 77
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 85
+    target 80
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 84
+    target 82
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 82
+    target 80
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 86
+    target 80
+    paper 3
+    patent 0
+    project 0
+    weight 3
+  ]
+  edge
+  [
+    source 88
+    target 87
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 89
+    target 88
+    paper 7
+    patent 24
+    project 2
+    weight 33
+  ]
+  edge
+  [
+    source 90
+    target 88
+    paper 15
+    patent 24
+    project 1
+    weight 40
+  ]
+  edge
+  [
+    source 91
+    target 88
+    paper 2
+    patent 20
+    project 1
+    weight 23
+  ]
+  edge
+  [
+    source 92
+    target 88
+    paper 14
+    patent 24
+    project 2
+    weight 40
+  ]
+  edge
+  [
+    source 93
+    target 91
+    paper 0
+    patent 0
+    project 1
+    weight 1
   ]
   edge
   [
     source 94
     target 93
     paper 0
-    patent 6
-    project 0
-    weight 6
+    patent 0
+    project 3
+    weight 3
   ]
   edge
   [
-    source 29
-    target 14
+    source 91
+    target 87
     paper 0
     patent 0
     project 1
     weight 1
+  ]
+  edge
+  [
+    source 95
+    target 87
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 96
+    target 87
+    paper 8
+    patent 0
+    project 1
+    weight 9
+  ]
+  edge
+  [
+    source 90
+    target 87
+    paper 3
+    patent 0
+    project 1
+    weight 4
+  ]
+  edge
+  [
+    source 97
+    target 91
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 97
+    target 95
+    paper 2
+    patent 0
+    project 3
+    weight 5
+  ]
+  edge
+  [
+    source 98
+    target 97
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 91
+    target 89
+    paper 0
+    patent 20
+    project 1
+    weight 21
+  ]
+  edge
+  [
+    source 92
+    target 89
+    paper 3
+    patent 24
+    project 0
+    weight 27
+  ]
+  edge
+  [
+    source 90
+    target 89
+    paper 4
+    patent 24
+    project 0
+    weight 28
+  ]
+  edge
+  [
+    source 98
+    target 95
+    paper 0
+    patent 0
+    project 2
+    weight 2
+  ]
+  edge
+  [
+    source 99
+    target 95
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 99
+    target 91
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 100
+    target 94
+    paper 2
+    patent 0
+    project 1
+    weight 3
+  ]
+  edge
+  [
+    source 92
+    target 90
+    paper 6
+    patent 24
+    project 2
+    weight 32
+  ]
+  edge
+  [
+    source 92
+    target 91
+    paper 2
+    patent 20
+    project 1
+    weight 23
+  ]
+  edge
+  [
+    source 100
+    target 91
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 91
+    target 90
+    paper 0
+    patent 20
+    project 2
+    weight 22
+  ]
+  edge
+  [
+    source 101
+    target 51
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 18
+    target 11
+    paper 4
+    patent 0
+    project 3
+    weight 7
+  ]
+  edge
+  [
+    source 52
+    target 51
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 52
+    target 31
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 103
+    target 102
+    paper 1
+    patent 0
+    project 1
+    weight 2
+  ]
+  edge
+  [
+    source 103
+    target 19
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 104
+    target 103
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 27
+    target 19
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 105
+    target 7
+    paper 4
+    patent 0
+    project 7
+    weight 11
+  ]
+  edge
+  [
+    source 19
+    target 7
+    paper 3
+    patent 0
+    project 1
+    weight 4
+  ]
+  edge
+  [
+    source 102
+    target 0
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 104
+    target 0
+    paper 1
+    patent 0
+    project 0
+    weight 1
+  ]
+  edge
+  [
+    source 19
+    target 0
+    paper 2
+    patent 0
+    project 0
+    weight 2
+  ]
+  edge
+  [
+    source 106
+    target 104
+    paper 0
+    patent 0
+    project 1
+    weight 1
+  ]
+  edge
+  [
+    source 104
+    target 19
+    paper 3
+    patent 0
+    project 1
+    weight 4
+  ]
+  edge
+  [
+    source 105
+    target 19
+    paper 4
+    patent 0
+    project 0
+    weight 4
+  ]
+  edge
+  [
+    source 107
+    target 106
+    paper 0
+    patent 0
+    project 4
+    weight 4
   ]
 ]

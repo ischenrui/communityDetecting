@@ -9,7 +9,7 @@ researcher = Blueprint('researcher', __name__)
 
 config = {}
 config['ALLOWED_EXTENSIONS'] = set(['gml'])
-config['UPLOAD_FOLDER'] = 'uploads'
+config['UPLOAD_FOLDER'] = 'F:\\Temp\\gmldata\\temp'
 config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
 
 
@@ -19,23 +19,24 @@ def echarts():
 
 @researcher.route("/upload_echarts", methods=["POST"])
 def upload_echarts():
+
     file_info = request.files["file"]
     code = json.loads(request.form["code"])
-
+    print(request.form)
     if file_info and allowed_file(file_info.filename):
         file_info.save(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
     else:
         return  json.dumps({"error" : True, "msg" : "文件格式有误"})
 
     g = ig.Graph.Read_GML(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
-
     back = {}
     for k in code:
         if k in config["ALGORITHM"]:
             back[k] = cd_algorithm.detecting(g, k)
         else:
             print("算法有误")
-
+    print(back)
+    print(json.dumps(back))
     return json.dumps(back)
 
 def allowed_file(filename):
