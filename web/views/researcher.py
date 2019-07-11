@@ -5,13 +5,13 @@ import sys
 sys.path.append("..")
 from model.community_detect import cd_algorithm
 
+
 researcher = Blueprint('researcher', __name__)
 
 config = {}
 config['ALLOWED_EXTENSIONS'] = set(['gml'])
 config['UPLOAD_FOLDER'] = 'uploads'
 config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
-
 
 @researcher.route('/researcher')
 def echarts():
@@ -21,18 +21,16 @@ def echarts():
 def upload_echarts():
     file_info = request.files["file"]
     code = request.form["code"].split(",")
-    print(code, type(code))
-
     if file_info and allowed_file(file_info.filename):
         file_info.save(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
     else:
-        return  json.dumps({"error" : True, "msg" : "文件格式有误"})
-    
-    g = ig.Graph.Read_GML(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
+        return json.dumps({"error": True, "msg": "文件格式有误"})
+    # g = ig.Graph.Read_GML(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
 
     back = {}
     for k in code:
         if k in config["ALGORITHM"]:
+            g = ig.Graph.Read_GML(os.path.join(config['UPLOAD_FOLDER'], "temp.gml"))
             back[k] = cd_algorithm.detecting(g, k)
         else:
             print("算法有误")
@@ -47,3 +45,5 @@ def allowed_file(filename):
     """
     global ALLOWED_EXTENSIONS
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in config['ALLOWED_EXTENSIONS']
+
+

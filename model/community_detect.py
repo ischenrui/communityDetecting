@@ -23,9 +23,8 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
             }
         """
     data = {'nodes': [], 'edges': []}
-
     class_list = list(set(g.vs['class']))
-    tid_index = {}
+    tid_list = [int(_)for _ in g.vs['teacherId']]
     for node in g.vs:
         tnode = {}
         tnode['teacherId'] = int(node['teacherId'])
@@ -37,24 +36,21 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
         tnode['class'] = class_list.index(node['class'])+1
         tnode['centrality'] = node['centrality']
         data['nodes'].append(tnode)
-        tid_index[int(node['id'])] = int(node['teacherId'])
 
     elist = g.get_edgelist()
     for i in range(0, len(g.es)):
         tedge = {}
-        # tedge['source'] = elist[i][1]
-        # tedge['target'] = elist[i][0]
-        if elist[i][1] in tid_index.keys(): tedge['source'] = tid_index[elist[i][1]]
-        if elist[i][0] in tid_index.keys(): tedge['target'] = tid_index[elist[i][0]]
+        tedge['source'] = tid_list[elist[i][1]]
+        tedge['target'] = tid_list[elist[i][0]]
         tedge['paper'] = int(g.es[i]['paper'])
         tedge['patent'] = int(g.es[i]['patent'])
         tedge['project'] = int(g.es[i]['project'])
         tedge['weight'] = int(g.es[i]['weight'])
         data['edges'].append(tedge)
-
     data['community_data'] = list(community_data)
     data['algorithm_compare'] = [{"cover": cover, "Q": q_, "C": c_, "S": s_}]
-    data['core_node'] = [tid_index[_] for _ in core_node]
+    id_list = g.vs['id']
+    data['core_node'] = [tid_list[id_list.index(_)] for _ in core_node]
     return json.dumps(data)
 
 def getColor(value):
@@ -272,7 +268,6 @@ class cdutil:
 
     def detecting(self,g, type='Louvain'):
         print('社区发现算法%s开始...' % type)
-
         weights = g.es['weight']
         if type == 'LPA':
             c = list(g.community_label_propagation(weights=weights).as_cover())
@@ -287,6 +282,7 @@ class cdutil:
         core_node,g = get_core_node(g)
         q_,c_,s_ = get_QCS(g)
         community_data = get_community_data(g)
+
 
         return get_json(g, cover,core_node,q_,c_,s_,community_data)
 

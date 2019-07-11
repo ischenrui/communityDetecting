@@ -54,7 +54,7 @@ graph_option = {
             label: {
                 normal: {
                     position: 'inside',
-                    show : false,
+                    show : true,
 
                     //回调函数，显示用户名
                     formatter: function(params){
