@@ -1,0 +1,102 @@
+{% extends 'base/admin_base.html' %}
+
+{% block titlename %}添加账户{% endblock %}
+
+{% block main_content %}
+<section id="main-content">
+  <section class="wrapper" >
+      <h3><i class="fa fa-angle-right"></i> 用户管理</h3>
+
+	  <!-- BASIC FORM ELELEMNTS -->
+	  <div class="row mt">
+		  <div class="col-lg-12">
+		      <div class="form-panel">
+			  <h4 class="mb"><i class="fa fa-angle-right"></i> 添加用户</h4>
+			  <form class="form-horizontal style-form" id="addForm">
+
+				  <div class="form-group">
+					  <label class="col-sm-2 col-sm-2 control-label">登录账号</label>
+					  <div class="col-sm-10">
+						  <input type="text"  class="form-control" placeholder="输入登录账号" name="account" v-model="account">
+					  </div>
+				  </div>
+				  <div class="form-group">
+					  <label class="col-sm-2 col-sm-2 control-label">用户姓名</label>
+					  <div class="col-sm-10">
+						  <input type="text"  class="form-control" placeholder="输入用户姓名" name="name" v-model="name">
+					  </div>
+				  </div>
+
+				  <div class="form-group">
+					  <label class="col-sm-2 col-sm-2 control-label">登录密码</label>
+					  <div class="col-sm-10">
+						  <input type="text"  class="form-control" placeholder="输入用户密码" name="password" v-model="password">
+					  </div>
+				  </div>
+				  <div class="form-group">
+					  <label class="col-sm-2 col-sm-2 control-label">用户类型</label>
+                      <div class="col-sm-10">
+                          <select class="form-control" name="type" v-model="type">
+                              <option>商务人员</option>
+                              <option>研究人员</option>
+                              <option>管理员</option>
+                          </select>
+                      </div>
+				  </div>
+				  <div class="form-group">
+                      <div class="col-sm-12">
+                        <div class="col-sm-6"><button class="btn btn-theme col-sm-4" style="display:block;margin:0 auto" @click="add($event)" >提交</button></div>
+                        <div class="col-sm-6" style="text-align:center"><button class="btn btn-theme col-sm-4"  @click="reset($event)" >清空</button></div>
+                      </div>
+				  </div>
+                  <div class="form-error"  style="text-align:center;color:red"><i></i><label class="text"></label></div>
+			  </form>
+		  </div>
+		  </div><!-- col-lg-12-->
+	  </div>
+      <!-- /row -->
+
+      <div class="row mt">
+          <div class="col-lg-12">
+              <div class="form-panel">
+                <h4><i class="fa fa-angle-right"></i> 最新添加</h4>
+                    <section id="unseen">
+                        <table class="table table-bordered table-striped table-condensed">
+                        <thead style="text-align:center">
+                            <tr>
+                              <th></th>
+                              <th> 账号</th>
+                              <th> 姓名</th>
+                              <th> 密码</th>
+                              <th> 权限</th>
+                              <th> 添加日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr v-for="item in a_data" :key="item.id">
+                                <td>  [[item.index]]</td>
+                                <td>  [[item.id]]</td>
+                                <td>  [[item.name]]</td>
+                                <td>  [[item.psd]]</td>
+                                <td>  [[item.status]]</td>
+                                <td>  [[item.create_time]]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div><!-- /content-panel -->
+          </div>
+      </div>
+  </section><! --/wrapper -->
+</section><!-- /MAIN CONTENT -->
+{% endblock %}
+
+{% block js_file %}
+    <!-- 引入组件库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <!-- 引入Vue -->
+    <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+    <script src="../static/js/element-ui/index.js"></script>
+    <script src="../static/js/admin/add.js"></script>
+{% endblock %}

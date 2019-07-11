@@ -1949,6 +1949,11 @@ label {
 .login-wrap .registration {
 	text-align: center;
 }
+.login-wrap .form-error {
+	text-align: center;
+	display: none;
+	color:red
+}
 .login-social-link {
 	display: block;
 	margin-top: 20px;

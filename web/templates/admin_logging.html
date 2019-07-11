@@ -1,0 +1,198 @@
+{% extends 'base/admin_base.html' %}
+{% block titlename %}日志管理{% endblock %}
+
+{% block main_content %}
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+<section id="main-content">
+<section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i> 日志管理</h3>
+
+
+    <div class="row mt">
+        <div class="col-lg-12">
+            <div class="border-head">
+                <h3>用户日志</h3>
+            </div>
+            <div class="form-panel">
+              <section id="unseen">
+                  <table class="table table-bordered table-striped table-condensed">
+                  <thead>
+                      <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>用户</th>
+                        <th>访问IP</th>
+                        <th>请求链接</th>
+                        <th>请求描述</th>
+                        <th>表单</th>
+                        <th>返回信息</th>
+                        <th>相应状态</th>
+                        <th>时间</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr v-for="item in result" :key="item.id">
+                        <td>[[item.id]]</td>
+                        <td>[[item.user]]</td>
+                        <td>[[item.ip]]</td>
+                        <td>[[item.url]]</td>
+                        <td>[[item.description]]</td>
+                        <td>[[item.form]]</td>
+                        <td>[[item.info]]</td>
+                        <td>[[item.status]]</td>
+                        <td>[[item.time]]</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </section>
+          </div><!-- /content-panel -->
+            <div class="block">
+                <el-pagination
+                  @size-change="handleSizeChange"
+                  @current-change="handleCurrentChange"
+                  :current-page.sync="currentPage"
+                  :page-sizes="[20, 40, 60, 80, 100]"
+                  :page-size="pageSize"
+                  layout="sizes, prev, pager, next"
+                  :total="totalNum"></el-pagination>
+              </div>
+        </div>
+    </div>
+
+</section><! --/wrapper -->
+</section><!-- /MAIN CONTENT -->
+
+
+<script src="../static/assets/js/jquery.js"></script>
+<script src="../static/assets/js/jquery-1.8.3.min.js"></script>
+<!--&lt;!&ndash; 引入组件库 &ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>-->
+<!--&lt;!&ndash; 引入Vue &ndash;&gt;-->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script>
+	var vm = new Vue({
+		el:"#main-content",
+		delimiters:['[[', ']]'],
+		data() {
+                return{
+                result: [],
+                currentPage: 1,
+                pageSize: 20,
+                totalNum: 0
+                };
+              },
+        created() { // 当 vm 实例 的 data 和 methods 初始化完毕后，vm实例会自动执行created 这个生命周期函数
+                  this.getAllList()
+                },
+		methods: {
+			  handleSizeChange(val) {
+				console.log(`每页 ${val} 条`);
+				vm.pageSize = val;
+				this.getAllList(vm.curPage, vm.pageSize);
+			  },
+			  handleCurrentChange(val) {
+				console.log(`当前页: ${val}`);
+				vm.curPage = val;
+				this.getAllList(vm.curPage, vm.pageSize);
+			  },
+              getAllList(curPage, pageSize) { // 获取数据
+				curPage=curPage||1;
+				pageSize=pageSize||20;
+
+                url='/logging/getdata';
+                var params= {};
+                params['curPage'] = curPage;
+                params['pageSize'] = pageSize;
+                var data= {
+                    data: JSON.stringify(params),
+                };
+                jQuery.ajax({
+                    url:url,
+                    type:'POST',
+                    data:data,
+                    dataType: 'json',
+                    success:function(data){
+                        re=data.obj;
+                        vm.result = re.data;
+                        vm.totalNum = re.total;
+                    },
+                    error:function (res) {
+                        console.log(`error`);
+                    }
+                });
+            },
+			},
+	});
+
+</script>
+
+{% endblock %}
+
+{% block js_file %}
+
+<script src="../static/assets/js/jquery.js"></script>
+<script src="../static/assets/js/jquery-1.8.3.min.js"></script>
+<!--&lt;!&ndash; 引入组件库 &ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>-->
+<!--&lt;!&ndash; 引入Vue &ndash;&gt;-->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script>
+	var vm = new Vue({
+		el:"#main-content",
+		delimiters:['[[', ']]'],
+		data() {
+                return{
+                result: [],
+                currentPage: 1,
+                pageSize: 20,
+                totalNum: 0
+                };
+              },
+        created() { // 当 vm 实例 的 data 和 methods 初始化完毕后，vm实例会自动执行created 这个生命周期函数
+                  this.getAllList()
+                },
+		methods: {
+			  handleSizeChange(val) {
+				console.log(`每页 ${val} 条`);
+				vm.pageSize = val;
+				this.getAllList(vm.curPage, vm.pageSize);
+			  },
+			  handleCurrentChange(val) {
+				console.log(`当前页: ${val}`);
+				vm.curPage = val;
+				this.getAllList(vm.curPage, vm.pageSize);
+			  },
+              getAllList(curPage, pageSize) { // 获取数据
+				curPage=curPage||1;
+				pageSize=pageSize||20;
+
+                url='/logging/getdata';
+                var params= {};
+                params['curPage'] = curPage;
+                params['pageSize'] = pageSize;
+                var data= {
+                    data: JSON.stringify(params),
+                };
+                jQuery.ajax({
+                    url:url,
+                    type:'POST',
+                    data:data,
+                    dataType: 'json',
+                    success:function(data){
+                        re=data.obj;
+                        vm.result = re.data;
+                        vm.totalNum = re.total;
+                    },
+                    error:function (res) {
+                        console.log(`error`);
+                    }
+                });
+            },
+			},
+	});
+
+</script>
+
+{% endblock %}
