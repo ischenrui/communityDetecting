@@ -12,40 +12,45 @@ def get_json(g, cover,core_node,q_,c_,s_,community_data):
             "edges": [{"source": 1, "target": 0, "paper": 0, "patent": 0, "project": 1, "weight": 1},...]
             "community_data": [{"1": {"density": 0.6, "transity": 0.5455, "scale": 5},...}
             "algorithm_compare": [{"cover": 0.9178082191780822, "Q": 0.6667031923442183, "C": 0.5580385487528344, "S": 0.75}]
-            "core_node": [{"1": 0}, {"2": 3}, ...]
+            "core_node": [0,3,...]
             }
             说明：
             {
             "nodes"中，"class"是社区编号
             "community_data": 中"scale"是社区规模，即社区内节点个数
             "algorithm_compare": 中"cover"是节点覆盖率, "Q"是模块度, "C"是聚集系数, "S"是社区强度
-            "core_node": 是各个社区中综合中心度最高的节点， 即，社区编号:节点id
+            "core_node": 是各个社区中综合中心度最高的节点
             }
         """
-    data = {'nodes': [], 'edges': [] }
-    data['community_data'] = list(community_data)
-    data['algorithm_compare'] = [{"cover":cover,"Q":q_,"C":c_,"S":s_}]
-    data['core_node'] = core_node
+    data = {'nodes': [], 'edges': []}
+    class_list = list(set(g.vs['class']))
+    tid_list = [int(_)for _ in g.vs['teacherId']]
     for node in g.vs:
         tnode = {}
-        tnode['id'] = int(node['id'])
+        tnode['teacherId'] = int(node['teacherId'])
+        # tnode['id'] = int(node['id'])
         tnode['name'] = node['name']
         tnode['code'] = node['code']
         tnode['school'] = node['school']
         tnode['insititution'] = node['insititution']
-        tnode['teacherId'] = node['teacherId']
-        tnode['class'] = node['class']
+        tnode['class'] = class_list.index(node['class'])+1
+        tnode['centrality'] = node['centrality']
         data['nodes'].append(tnode)
+
     elist = g.get_edgelist()
     for i in range(0, len(g.es)):
         tedge = {}
-        tedge['source'] = elist[i][1]
-        tedge['target'] = elist[i][0]
+        tedge['source'] = tid_list[elist[i][1]]
+        tedge['target'] = tid_list[elist[i][0]]
         tedge['paper'] = int(g.es[i]['paper'])
         tedge['patent'] = int(g.es[i]['patent'])
         tedge['project'] = int(g.es[i]['project'])
         tedge['weight'] = int(g.es[i]['weight'])
         data['edges'].append(tedge)
+    data['community_data'] = list(community_data)
+    data['algorithm_compare'] = [{"cover": cover, "Q": q_, "C": c_, "S": s_}]
+    id_list = g.vs['id']
+    data['core_node'] = [tid_list[id_list.index(_)] for _ in core_node]
     return json.dumps(data)
 
 def getColor(value):
@@ -176,6 +181,7 @@ def get_QCS(g):
 
     return q,c,s
 
+
 def get_core_node(g):
     """
     得到每个社区的核心节点
@@ -192,6 +198,7 @@ def get_core_node(g):
             t_dic[label] = [i]
 
     out = []
+    my_dic = {}  # 记录节点分析数据
     for k, v in t_dic.items():
         subg = g.subgraph(v).copy()
         edgelist = subg.get_edgelist()
@@ -203,17 +210,21 @@ def get_core_node(g):
         result = [(a[i] + b[i] + c[i]) / 3 for i in range(0, subg_n)]
         i = result.index(max(result))
         a = subg.vs['id'][i]
-        out.append({k:int(a)})
-    return out
-    # score_list = []
-    # for node in g.vs:
-    #     tid = node['teacherId']
-    #     if tid in my_dic.keys():
-    #         score_list.append(my_dic[tid])
-    #     else:
-    #         score_list.append(0)
-    # g.vs['centrality'] = score_list
+        out.append(int(a))
 
+        for i in range(0, subg_n):
+            tid = subg.vs['teacherId'][i]
+            my_dic[tid] = round(result[i], 4)
+
+    score_list = []
+    for node in g.vs:
+        tid = node['teacherId']
+        if tid in my_dic.keys():
+            score_list.append(my_dic[tid])
+        else:
+            score_list.append(0)
+    g.vs['centrality'] = score_list
+    return out,g
 
 def add_centrality(g):
     t_dic = {}
@@ -257,7 +268,6 @@ class cdutil:
 
     def detecting(self,g, type='Louvain'):
         print('社区发现算法%s开始...' % type)
-
         weights = g.es['weight']
         if type == 'LPA':
             c = list(g.community_label_propagation(weights=weights).as_cover())
@@ -269,9 +279,10 @@ class cdutil:
             c = list(g.community_multilevel(weights=weights).as_cover())
         g = add_label(c, g)
         cover = get_cover(g, c)
-        core_node = get_core_node(g)
+        core_node,g = get_core_node(g)
         q_,c_,s_ = get_QCS(g)
         community_data = get_community_data(g)
+
 
         return get_json(g, cover,core_node,q_,c_,s_,community_data)
 

@@ -3,14 +3,16 @@ from flask import Flask, render_template
 from record import r
 
 from web.views.researcher import researcher
+from web.views.community import community
 from web.views.my_admin import my_admin
 from web.views.login import login
 
 import os
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY']='dogdong'
 app.register_blueprint(researcher)
+app.register_blueprint(community)
 app.register_blueprint(my_admin)
 app.register_blueprint(login)
 # app.register_blueprint(user, url_prefix='/user')

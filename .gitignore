@@ -2,7 +2,18 @@ db/*
 
 web/test.py
 web/app.py
-*/__pycache__
-web/uploads/*
-*/.vscode
-.idea
+__pycache__
+
+
+
+.vscode/
+.idea/
+model/my_test.py
+
+Pipfile.lock
+config.py
+
+
+relation_data/
+
+uploads/

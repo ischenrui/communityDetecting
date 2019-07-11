@@ -57,15 +57,16 @@ bar_graph_option = {
 
 function reload_bar_graph(data){
     if(!data){
-        console.error("data error！", data);
+        // console.error("data error！", data);
         return;
     }
-    console.log(data)
+    // console.log(data)
     
     bar_graph_option.legend.data = data.legend;
+    // console.log(bar_graph_option.xAxis[0].data);
     bar_graph_option.xAxis[0].data = data.xAxis;
     let series = [];
-    console.log(bar_graph_option.series);
+    // console.log(bar_graph_option.series);
     for(let key in data.series){
         series.push({
             "name" : key,
@@ -74,9 +75,9 @@ function reload_bar_graph(data){
         })
     }
     bar_graph_option.series = series;
-    console.log(bar_graph_option.series);
-    console.log(series);
-
+    // console.log(bar_graph_option.series);
+    // console.log(series);
+    barChart.clear();
     barChart.setOption(bar_graph_option);
 }
 

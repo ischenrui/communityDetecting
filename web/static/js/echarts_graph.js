@@ -1,18 +1,6 @@
 var myChart = echarts.init(document.getElementById('container'));
 
-var categories = [];
-for (var i = 0; i < 6; i++) {
-    categories[i] = {
-        name: '社区' + (i + 1)
-    };
-}
-graph.nodes.forEach(function (node) {
-    node.itemStyle = null;
-    node.category = node.code;
-    // Use random x, y
-    node.x = node.y = null;
-    node.draggable = true;
-});
+var SCHOOL_LIST = {}
 
 graph_option = {
     tooltip: {
@@ -27,22 +15,30 @@ graph_option = {
             }
         }
     },
-
+    toolbox: {
+        　　show: true,
+        　　feature: {
+        　　　　saveAsImage: {
+                    show:true, 
+                    // excludeComponents :['toolbox'],
+                    type:"png",
+                    pixelRatio: 2
+        　　　　}
+        　　}
+    },
     // 图例
     legend: [{
         // selectedMode: 'single',
-        data: categories.map(function (a) {
-            return a.name;
-        })
+        data: undefined
     }],
     animation: true,
     series : [
         {
             type: 'graph',
             layout: 'force',
-            data: graph.nodes,
-            links: graph.links,
-            categories: categories,
+            data: undefined,
+            links: undefined,
+            categories: undefined,
 
             // // 边的长度范围
             // edgeLength: [10, 50],
@@ -83,12 +79,16 @@ graph_option = {
 }
 
 function reload_graph(data){
+    if(!"nodes" in data) return;
     let nodes = data.nodes, links = data.links, cates = data.community;
-    console.log(nodes.length, links.length, cates.length);
+    // console.log(nodes.length, links.length, cates.length);
     graph_option.series[0].data = nodes;
     graph_option.series[0].links = links;
 
-    categories = [];
+    // 设置保存为图片时的名称
+    graph_option.toolbox.feature.name = sessionStorage.getItem("filename");
+
+    let categories = [];
     for (var i = 0; i < cates.length; i++) {
         categories[i] = {
             name: '社区' + (i + 1)
@@ -101,7 +101,151 @@ function reload_graph(data){
         })
     }],
     myChart.setOption(graph_option);
+    myChart.hideLoading();
 }
 
-myChart.setOption(graph_option);
+$("#select-college").change(function(){
+    let school = $(this).children("option:selected").text();
+    //
+    if(school in SCHOOL_LIST){
+        setInstitution(SCHOOL_LIST[school],school);
+    }
+    else{
+        getInstitution(school);
+    }
+})
 
+// 切换学院的响应事件
+$("#select-institution").change(function () {
+    let school = $("#select-college").children("option:selected").text();
+    let institution = $(this).children("option:selected").text();
+    // console.log(school,institution);
+    getInstitutionGraphData(school,institution);
+});
+
+
+/**
+ * 根据学校名获取其所有学院信息
+ * @param {String} school 学校名
+ */
+function getInstitution(school){
+    $.ajax({
+        type: "get",
+        url: "institution",
+        data: {"school" : school},
+        dataType: "json",
+        success: function (institution) {
+            setInstitution(institution, school);
+            // 保存数据
+            SCHOOL_LIST[school] = institution;
+        },
+        error: function(xhr){
+            console.error("query institution error,and the status is: ", xhr.status);
+        }
+    });
+}
+
+
+/**
+ * 将学院信息填充到下拉框中
+ * @param {array} institution_list 学院数组
+ * @param {String} school 学校
+ */
+function setInstitution(institution_list, school){
+    if(institution_list.length <= 0){
+        alert("学院数据为空");
+        return;
+    }
+    let options = "";
+    for (let i = 0; i < institution_list.length; i++) {
+        options += `<option>${institution_list[i]}</option>`;
+    }
+    $("#select-institution").html(options);
+    getInstitutionGraphData(school, institution_list[0]);
+}
+
+
+/**
+ * 根据学校名及学院名，获取学院内的关系数据
+ * @param {String} school
+ * @param {String} institution
+ */
+function getInstitutionGraphData(school, institution){
+    let file_path = `/static/relation_data/${school}${institution}.txt`;
+    $.ajax({
+        type: "get",
+        url: file_path,
+        dataType: "json",
+        success: function (response) {
+            reload_graph(formatGraph(response));
+        },
+        error : function (xhr) {
+            if (xhr.status == 404){
+                alert("当前学院尚无数据！");
+                return;
+            }
+            alert("数据请求出错，请稍后再试");
+        }
+    });
+}
+
+
+/**
+ * 规格化关系图数据，使之可以生成echarts可用的数据格式
+ * @param data
+ * @returns {{nodes: Array, links: Array, community: *}}
+ */
+function formatGraph(data){
+    // console.log(data,typeof (data));
+    if (typeof (data) == "string"){
+        data = JSON.parse(data);
+        console.log(typeof(data));
+    }
+
+    let back_data = {
+        "nodes" : [],
+        "links" : [],
+        "community" : data['community_data']
+    };
+
+    let nodes = data['nodes'];
+
+    for(let index in nodes){
+        let node = nodes[index];
+        node['label'] = node['name'];
+        node['name'] = String(node['teacherId']);
+        node['symbolSize'] = parseInt(node['centrality'] * 30 + 5);
+        node['category'] = node['class'] - 1;
+        node.draggable= true;
+
+        if(data.core_node.indexOf(node["teacherId"]) >= 0){
+            node["itemStyle"]= {
+                "normal": {
+                    "borderColor": 'yellow',
+                    "borderWidth": 5,
+                    "shadowBlur": 10,
+                    "shadowColor": 'rgba(0, 0, 0, 0.3)'
+                }
+            }
+        }
+
+        delete node["teacherId"];
+        delete node["class"];
+        delete node["centrality"];
+        back_data["nodes"].push(node);
+    }
+
+    let links = data['edges'];
+    for(let index in links){
+        let link = links[index];
+        if(!("source" in link && "target" in link))
+            continue;
+        link["source"] = String(link["source"]);
+        link["target"] = String(link["target"]);
+        link["value"] = link["weight"];
+        delete link["weight"];
+        back_data['links'].push(link)
+    }
+
+    return back_data;
+}

@@ -21,12 +21,22 @@ $("#file-input").on("input propertychange", function() {
 // 确认上传
 $("#upload-button")
     .on("click", function() {
+        
         var form_data = new FormData();
         var file_info = $("#file-input")[0].files[0];
+        
+        var file_name = getFileName($("#file-input").val())
+               
         var algorithm = get_algorithm_and_params();
 
+        if(RUNING){
+            alert("请不要重复提交~");
+            return;
+        }
+        RUNING = true;
         form_data.append("file", file_info);
-        form_data.append("code", JSON.stringify(algorithm));
+        form_data.append("code", algorithm);
+        myChart.showLoading();
         $.ajax({
             url: "upload_echarts",
             type: "POST",
@@ -34,18 +44,27 @@ $("#upload-button")
             async: false,
             contentType: false,
             processData: false,
+            dataType: "json",
             success: function(cur_data) {
-//                console.log(cur_data);
-                data = JSON.parse(cur_data);
-                 updateData(data);
+                sessionStorage.setItem("data", cur_data);
+                sessionStorage.setItem("filename", file_name);
+
+                // console.log(cur_data);
+                format_data_to_echarts(cur_data);
+                updateData(cur_data);
                 // 关闭上传框
                 $("#upload-layout").hide();
                 // 清空待上传文件信息
                 // $("#file-name").text(this.value);
                 $("#file-state").text("上传成功");
+                RUNING = false;
             },
             error: function() {
                 alert("数据上传失败！");
+                RUNING = false;
+            },
+            finally:function(){
+                console.log("finally");
             }
         })
     })
@@ -54,14 +73,41 @@ $("#upload-button")
 $("#download-data")
     .on("click", downFile);
 
-// 先清洗数据 再下载
+// 下载数据
 function downFile() {
-    
+    let file_name = sessionStorage.getItem("filename");
+    if(file_name){
+        file_name += ".json";
+        let data = sessionStorage.getItem("data");
+
+        let file = new File([data], file_name, { type: "text/plain;charset=utf-8" });
+        saveAs(file);
+    }
 }
 
 // 导出图片
 $("#download-img")
 	.on("click", function() {
-		saveSvgAsPng(document.getElementById("container"), "networkGraph.png");
+        let file_name = sessionStorage.getItem("filename");
+        if(file_name){
+            let img = myChart.getDataURL();
+            let a = document.createElement("a");
+            a.href = img;
+            a.download = file_name+".png";
+            a.click();
+        }
     })
     
+/**
+ * 将文件名从文件路径中分离
+ * @param {string} file_path 
+ */
+function getFileName(file_path){
+    /**
+     * "C:\fakepath\北京大学工学院.gml"
+     * ==>  ["C:\fakepath\北京大学工学院", "gml"]
+     * ==>  ["C:","fakepath","北京大学工学院"]
+     */
+    let path_arr = file_path.split(".")[0].split("\\");
+    return path_arr[path_arr.length -1]
+}
