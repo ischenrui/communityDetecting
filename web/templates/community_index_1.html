@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>数据可视化-普通用户</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../static/css/bootstrap_v4.min.css">
+    <script type="text/javascript" src="../static/js/third_part/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../static/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/personal.css">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+
+     <!-- Bootstrap core CSS -->
+    <link href="../static/assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/lineicons/style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+    <link href="../static/assets/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!--<![endif]&ndash;&gt;-->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <!--<script src="../static/assets/js/jquery.js"></script>-->
+    <script src="../static/assets/js/jquery-1.8.3.min.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="../static/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="../static/assets/js/common-scripts.js"></script>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!-- 引入组件库 -->
+<script src="../static/js/element-ui/index.js"></script>
+<!-- 引入Vue -->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<body>
+<!--header start-->
+<header class="header black-bg" id="header-app">
+    <!--menu hidden start-->
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--menu hidden end-->
+    <!--logo start-->
+    <a href="#" class="logo"><b>Triple Helix</b></a>
+    <!--logo end-->
+
+    <div class="top-menu">
+
+        <ul class="nav pull-right top-menu">
+            <li><a class="logout"  @click="logout($event)" >退出登录</a></li>
+        </ul>
+
+        <!--name start-->
+        <ul class="nav" style="font-size: 20px;color: #ffffff;float: right;margin-top: 15px;text-transform: uppercase;padding-right:10px"><b>{{ user_name }}</b></ul>
+        <!--name end-->
+    </div>
+</header>
+<!--header end-->
+
+<!--show-chart start-->
+<div id="container"></div>
+<!--show-chart end-->
+
+<!--选择框 start-->
+<div class="container-fluid" style="padding-top:65px">
+    <div class="ml-3 mr-2 mt-3">
+        <select id="select-college">
+            {%  for name in school  %}
+            <option readonly="readonly">{{ name }}</option>
+            {% endfor %}
+        </select>
+        <select id="select-institution" class="ml-3">
+            {% for name in institution %}
+            <option readonly="readonly">{{ name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<!--选择框 end-->
+</body>
+<script src="../static/js/base/base.js"></script>
+
+<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+<script src="../static/js/echarts_graph.js"></script>
+<script>
+    let school_tmp = "{{ selected_s }}";
+    console.log(school_tmp);
+    let institution_tmp = "{{ selected_i }}";
+    console.log(institution_tmp);
+    getInstitutionGraphData(school_tmp, institution_tmp);
+</script>
+</html>

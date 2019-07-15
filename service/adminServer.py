@@ -42,6 +42,25 @@ class adminService:
 
         return result
 
+    def get_spider_log(self, params):
+        sql = "SELECT * FROM spider_log ORDER BY time DESC LIMIT %s, %s" % ((params['curPage']-1)*params['pageSize'], params['pageSize'])
+        data = db_localpc.getDics(sql)
+        res_data = []
+        index = 1
+        for i in data:
+            i['time'] = str(i['time']) if i['time'] else None
+            i['index'] = index
+            index += 1
+            res_data.append(i)
+        sql_2 = "SELECT COUNT(*) AS total FROM spider_log"
+        length = db_localpc.getDics(sql_2)
+
+        result = dict()
+        result["total"] = length[0]['total']
+        result["data"] = res_data
+
+        return result
+
     def delete_account(self, params):
         sql = "DELETE FROM account WHERE id=%s"
         result = db_localpc.exe_sql(sql, params)
@@ -76,6 +95,13 @@ class adminService:
             re = e.args[0]
 
         return re
+
+    def get_progressbar(self):
+        sql_1 = "SELECT COUNT(id) AS all_ FROM `eds_paper_search_list`;"
+        sql_2 = "SELECT COUNT(id) AS num_ FROM `eds_paper_search_list` WHERE search=1;"
+        all_ = db_localpc.getDics(sql_1)[0]["all_"]
+        searched = db_localpc.getDics(sql_2)[0]["num_"]
+        return int(100*searched/all_)
 
 
 admin_service = adminService()

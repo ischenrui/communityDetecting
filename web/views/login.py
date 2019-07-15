@@ -1,4 +1,6 @@
 from flask import Flask, render_template, redirect, request, session, Blueprint
+
+import functools
 import logging, json, os
 import sys
 
@@ -29,12 +31,18 @@ def login_check():
         if user and user['psd'] == password:
             session['username'] = user['name']
             session['account'] = user['id']
-            # ---cookie时间---
+
             session.permanent = True
             ajax = dict()
             ajax['success'] = True
             ajax['msg'] = ''
             ajax["obj"] = {"account": user['id']}
+            if user["status"] == "管理员":
+                ajax["obj"]["url"] = '/admin/accounts'
+            elif user["status"] == "研究人员":
+                ajax["obj"]["url"] = '/researcher'
+            else:
+                ajax["obj"]["url"] = '/community'
             s = json.dumps(ajax)
             return s
         else:
@@ -55,3 +63,13 @@ def logout():
     ajax["obj"] = {}
     s = json.dumps(ajax)
     return s
+
+
+def is_login(func):
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        user = session.get('username')
+        if not user:
+            return redirect('/login')
+        return func(*args, **kwargs)
+    return inner

@@ -47,7 +47,7 @@ var login = new Vue({
                 success:function(data){
                     re=data.success;
                     if (re){
-                        window.location="/admin"
+                        window.location = data.obj.url;
                     }else{
                         login.showError(data.msg);
                     }

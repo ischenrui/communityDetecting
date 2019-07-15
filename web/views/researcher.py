@@ -2,20 +2,24 @@ from flask import Flask, render_template, redirect, request ,Blueprint
 import logging, json, os
 import igraph as ig
 import sys
-sys.path.append("..")
 from model.community_detect import cd_algorithm
+from web.views.login import is_login
+sys.path.append("..")
 
 
 researcher = Blueprint('researcher', __name__)
 
-config = {}
+config = dict()
 config['ALLOWED_EXTENSIONS'] = set(['gml'])
 config['UPLOAD_FOLDER'] = 'uploads'
 config["ALGORITHM"] = set(["GN", "LPA", "CNM", "Louvain"])
 
+
 @researcher.route('/researcher')
+@is_login
 def echarts():
     return render_template('researcher_page.html')
+
 
 @researcher.route("/upload_echarts", methods=["POST"])
 def upload_echarts():
@@ -36,6 +40,7 @@ def upload_echarts():
             print("算法有误")
 
     return json.dumps(back)
+
 
 def allowed_file(filename):
     """

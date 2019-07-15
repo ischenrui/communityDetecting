@@ -1,5 +1,10 @@
 {% extends 'base/admin_base.html' %}
 {% block titlename %}爬虫设置{% endblock %}
+{% block head_js %}
+<!--script for this page-->
+<script src="../static/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../static/js/admin/spider_set.js"></script>
+{% endblock %}
 
 {% block main_content %}
 <section id="main-content">
@@ -11,19 +16,28 @@
         <div class="col-lg-6">
           <div class="form-panel">
           <h4 class="mb"><i class="fa fa-angle-right"></i> 参数设置</h4>
-          <form class="form-horizontal style-form" method="get">
+          <form class="form-horizontal style-form" id="setForm">
 
               <div class="form-group">
                   <div class="col-lg-6">
-                      <label class="col-sm-4 control-label">下载延时</label>
+                      <label class="col-sm-4 control-label">下载延时(ms)</label>
                       <div class="col-sm-8" style="dispaly:inline-block;">
-                          <input type="text"  class="form-control" placeholder="如:2000">
+                          <select class="form-control" name="delay">
+                              <option>0</option>
+                              <option>2000</option>
+                              <option>4000</option>
+                          </select>
                       </div>
                   </div>
                   <div class="col-lg-6">
                       <label class="col-sm-4 control-label">当前最大请求</label>
                       <div class="col-sm-8">
-                          <input type="text"  class="form-control" placeholder="默认: 16">
+                          <select class="form-control" name="max_req">
+                              <option>1</option>
+                              <option>16</option>
+                              <option>32</option>
+                              <option>64</option>
+                          </select>
                       </div>
                   </div>
               </div>
@@ -32,7 +46,7 @@
                   <div class="col-sm-12">
                       <label class="col-sm-4 control-label">开启cookie</label>
                       <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked="" data-toggle="switch" />
+                        <input type="checkbox" class="form-control" data-toggle="switch" name="cookie">
                       </div>
                   </div>
               </div>
@@ -41,7 +55,7 @@
                   <div class="col-sm-12">
                       <label class="col-sm-4 control-label">开启IP代理</label>
                       <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked="" data-toggle="switch" />
+                        <input type="checkbox" class="form-control" data-toggle="switch" name="proxy"/>
                       </div>
                   </div>
               </div>
@@ -50,16 +64,7 @@
                   <div class="col-sm-12">
                       <label class="col-sm-4 control-label">开启重请求</label>
                       <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked="" data-toggle="switch" />
-                      </div>
-                  </div>
-              </div>
-
-              <div class="form-group">
-                  <div class="col-sm-12">
-                      <label class="col-sm-4 control-label">开启重请求</label>
-                      <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked="" data-toggle="switch" />
+                        <input type="checkbox" class="form-control" checked="" data-toggle="switch" name="re_req"/>
                       </div>
                   </div>
               </div>
@@ -67,10 +72,10 @@
               <div class="form-group">
                   <div class="col-sm-12">
                   <div class="col-sm-10"></div>
-                  <div class="col-sm-2"><button type="submit" class="btn btn-theme col-sm-12" style="display:block;margin-right:0 auto">保存</button></div>
+                  <div class="col-sm-2"><button type="submit" class="btn btn-theme col-sm-12" style="display:block;margin-right:0 auto" @click="save($event)">保存</button></div>
                   </div>
               </div>
-
+            <div class="form-error"  style="text-align:center;color:red"><i></i><label class="text"></label></div>
           </form>
         </div>
         </div><!-- col-lg-6-->
@@ -83,40 +88,43 @@
                   <div class="col-lg-6">
                       <label class="col-sm-4 control-label">下载延时</label>
                       <div class="col-sm-8" style="dispaly:inline-block;">
-                          <label >2000ms</label>
+                          <label >[[setting.DOWNLOAD_DELAY]]ms</label>
                       </div>
                   </div>
                   <div class="col-lg-6">
                       <label class="col-sm-4 control-label">当前最大请求</label>
                       <div class="col-sm-8">
-                          <label >16</label>
+                          <label >[[setting.CONCURRENT_REQUESTS]]</label>
                       </div>
                   </div>
               </div>
 
               <div class="form-group">
                   <div class="col-sm-12">
-                      <label class="col-sm-4 control-label">开启cookie</label>
+                      <label class="col-sm-4 control-label">是否开启cookie</label>
                       <div class="col-sm-6 text-center">
-                          <label >True</label>
+                          <label v-if="setting.COOKIES_ENABLED==true">是</label>
+                          <label v-else>否</label>
                       </div>
                   </div>
               </div>
 
               <div class="form-group">
                   <div class="col-sm-12">
-                      <label class="col-sm-4 control-label">开启IP代理</label>
+                      <label class="col-sm-4 control-label">是否开启IP代理</label>
                       <div class="col-sm-6 text-center">
-                          <label >True</label>
+                          <label v-if="setting.PROXY_ENABLED==true">是</label>
+                          <label v-else>否</label>
                       </div>
                   </div>
               </div>
 
               <div class="form-group">
                   <div class="col-sm-12">
-                      <label class="col-sm-4 control-label">开启重请求</label>
+                      <label class="col-sm-4 control-label">是否开启重请求</label>
                       <div class="col-sm-6 text-center">
-                          <label >True</label>
+                          <label v-if="setting.RE_REQUEST_ENABLED==true">是</label>
+                          <label v-else>否</label>
                       </div>
                   </div>
               </div>
@@ -139,12 +147,12 @@
       <div class="row mt">
         <div class="col-lg-12">
           <div class="form-panel">
-          <h4 class="mb"><i class="fa fa-angle-right"></i> 爬虫进度</h4>
+          <h4 class="mb"><i class="fa fa-angle-right"></i> 数据爬取进度</h4>
           <! -- ANIMATED PROGRESS BARS -->
             <div class="showback">
                 <h4><i class="fa fa-angle-right"></i> Animated Progress Bars</h4>
                 <div class="progress progress-striped active">
-                  <div class="progress-bar"  role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+                  <div class="progress-bar"  role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progressbar_now}}%">
                     <span class="sr-only">45% Complete</span>
                   </div>
                 </div>
@@ -156,24 +164,19 @@
   </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
 
-<!--script for this page-->
-<script src="..static/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
 
 <!--custom switch-->
-<script src="..static/assets/js/bootstrap-switch.js"></script>
+<script src="../static/assets/js/bootstrap-switch.js"></script>
 
 <!--custom tagsinput-->
-<script src="..static/assets/js/jquery.tagsinput.js"></script>
+<script src="../static/assets/js/jquery.tagsinput.js"></script>
 
 <!--custom checkbox & radio-->
-
-<script type="text/javascript" src="..static/assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="..static/assets/js/bootstrap-daterangepicker/date.js"></script>
-<script type="text/javascript" src="..static/assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-<script type="text/javascript" src="..static/assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
 
 
-<script src="..static/assets/js/form-component.js"></script>
+<script src="../static/assets/js/form-component.js"></script>
 
 {% endblock %}
+
+

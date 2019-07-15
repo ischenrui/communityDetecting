@@ -51,8 +51,6 @@ var add_account = new Vue({
                 return ;
             }
             url='/add/insert';
-            console.log($(".form-control").serialize());
-            console.log(typeof $(".form-control").serialize());
             $.ajax({
                 url:url,
                 type:'POST',

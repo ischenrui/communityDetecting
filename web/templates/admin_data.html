@@ -1,7 +1,13 @@
 {% extends 'base/admin_base.html' %}
-{% block titlename %}添加账户{% endblock %}
+{% block titlename %}查看数据{% endblock %}
+{% block head_js %}
+<script src="../static/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+{% endblock %}
 
 {% block main_content %}
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 <section id="main-content">
   <section class="wrapper">
       <h3><i class="fa fa-angle-right"></i> 数据信息</h3>
@@ -57,148 +63,53 @@
           <div class="col-lg-12">
               <div class="form-panel">
                 <h4><i class="fa fa-angle-right"></i> 最新添加</h4>
-                    <section id="unseen">
+                    <section>
                         <table class="table table-bordered table-striped table-condensed">
                         <thead>
                             <tr>
-                              <th></th>
-                              <th>ID</th>
-                              <th>标题</th>
-                              <th>作者</th>
-                              <th>出版物</th>
-                              <th>出版时间</th>
-                              <th>数据源</th>
+                              <th style="width:40px"></th>
+                              <th>请求链接</th>
+                              <th style="width:150px">请求时间</th>
+                              <th style="width:100px">返回状态</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td># 1</td>
-								<td>ae97432e-9c87-11e9-89b8-005056c00008</td>
-								<td>朱禹</td>
-								<td>水流量对非共沸工质热泵系统参数的影响</td>
-								<td>《天津大学》</td>
-								<td>2007</td>
-								<td>知网</td>
-							</tr>
-							<tr>
-                                <td># 2</td>
-								<td>b19c9f40-9c87-11e9-8b6b-005056c00008</td>
-								<td>陈辉</td>
-								<td>被动传感器系统的快速航迹起始算法</td>
-								<td>《光电工程》</td>
-								<td>2008</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 3</td>
-								<td>b4a8d93e-9c87-11e9-a8fd-005056c00008</td>
-								<td>朱洪艳</td>
-								<td>一种改进的多模型噪声辨识方法</td>
-								<td>《系统仿真学报》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 4</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 5</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 6</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 7</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 8</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 9</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 10</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 11</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
-							</tr>
-
-							<tr>
-                                <td># 12</td>
-								<td>b619d3c6-9c87-11e9-a347-005056c00008</td>
-								<td>韩红</td>
-								<td>一种典型的机载相控阵雷达仿真系统</td>
-								<td>《系统工程与电子技术》</td>
-								<td>2003</td>
-								<td>知网</td>
+                            <tr v-for="item in result" :key="item.index">
+                                <td style="width:40px"># [[item.index]]</td>
+                                <td>[[item.url]]</td>
+                                <td style="width:150px">[[item.time]]</td>
+                                <td style="width:100px">[[item.status]]</td>
 							</tr>
                         </tbody>
                     </table>
-                </section>
+						<div class="block">
+							<el-pagination
+							  @size-change="handleSizeChange"
+							  @current-change="handleCurrentChange"
+							  :current-page.sync="currentPage"
+							  :page-sizes="[10, 20, 40, 60]"
+							  :page-size="pageSize"
+							  layout="sizes, prev, pager, next"
+							  :total="totalNum"></el-pagination>
+						</div>
+                	</section>
             </div><!-- /content-panel -->
           </div>
       </div>
 
 
-
   </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
 
+{% endblock %}
+
+{% block js_file %}
+<!-- 引入组件库 -->
+<script src="../static/assets/js/jquery.js"></script>
+<script src="../static/assets/js/jquery-1.8.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!-- 引入Vue -->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script src="../static/js/element-ui/index.js"></script>
+<script src="../static/js/admin/spider_log.js"></script>
 {% endblock %}

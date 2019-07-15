@@ -3,16 +3,18 @@ from flask import Flask, render_template, redirect, request ,Blueprint
 import json
 # from dbhelper import DBConnecter as DB
 from db.mydba import db_crpc
+from web.views.login import is_login
 
 community = Blueprint('community', __name__)
 
 
 @community.route('/community', methods=['GET', 'POST'])
+@is_login
 def community_index():
     school = [_['SCHOOL_NAME'] for _ in get_school_list()]
     institution = [_['NAME'] for _ in get_institution_list(school[0])]
 
-    return render_template('community_index.html', school=school, institution=institution, selected_s=school[0], selected_i=institution[0])
+    return render_template('community_index_1.html', school=school, institution=institution, selected_s=school[0], selected_i=institution[0])
 
 
 @community.route('/institution', methods=['GET', 'POST'])
