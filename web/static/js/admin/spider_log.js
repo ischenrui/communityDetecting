@@ -19,12 +19,10 @@ $(function() {
                 },
 		methods: {
 			  handleSizeChange: function(val) {
-				console.log(`每页 ${val} 条`);
 				edit_vue.pageSize = val;
 				this.getAllList(edit_vue.curPage, edit_vue.pageSize);
 			  },
 			  handleCurrentChange: function(val) {
-				console.log(`当前页: ${val}`);
 				edit_vue.curPage = val;
 				this.getAllList(edit_vue.curPage, edit_vue.pageSize);
 			  },

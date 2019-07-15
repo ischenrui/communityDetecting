@@ -36,7 +36,6 @@ var spider_set = new Vue({
         },
         get_params: function(){
             url = '/spider/params';
-            console.log("获取参数");
             $.ajax({
                 url:url,
                 type:'POST',

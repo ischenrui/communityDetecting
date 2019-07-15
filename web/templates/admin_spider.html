@@ -1,9 +1,9 @@
 {% extends 'base/admin_base.html' %}
 {% block titlename %}爬虫设置{% endblock %}
-{% block head_js %}
-<!--script for this page-->
-<script src="../static/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="../static/js/admin/spider_set.js"></script>
+
+{% block head_src %}
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 {% endblock %}
 
 {% block main_content %}
@@ -164,6 +164,12 @@
   </section><! --/wrapper -->
 </section><!-- /MAIN CONTENT -->
 
+{% endblock %}
+
+{% block js_file %}
+
+<!--script for this page-->
+<script src="../static/assets/js/jquery-ui-1.9.2.custom.min.js"></script>
 
 <!--custom switch-->
 <script src="../static/assets/js/bootstrap-switch.js"></script>
@@ -174,9 +180,9 @@
 <!--custom checkbox & radio-->
 <script type="text/javascript" src="../static/assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
 
-
 <script src="../static/assets/js/form-component.js"></script>
 
+<script src="../static/js/admin/spider_set.js"></script>
 {% endblock %}
 
 

@@ -20,12 +20,10 @@ $(function() {
                 },
 		methods: {
 			  handleSizeChange: function(val) {
-				console.log(`每页 ${val} 条`);
 				edit_vue.pageSize = val;
 				this.getAllList(edit_vue.curPage, edit_vue.pageSize);
 			  },
 			  handleCurrentChange: function(val) {
-				console.log(`当前页: ${val}`);
 				edit_vue.curPage = val;
 				this.getAllList(edit_vue.curPage, edit_vue.pageSize);
 			  },
@@ -56,7 +54,6 @@ $(function() {
                 });
             },
               remove: function(_id) { // 获取数据
-				console.log(_id);
 
                 url='/accounts/delete';
                 var params= {};
@@ -70,7 +67,6 @@ $(function() {
                     data:data,
                     dataType: 'json',
                     success:function(data){
-                        console.log("成功");
                         edit_vue.getAllList(edit_vue.currentPage, edit_vue.pageSize);
                     },
                     error:function (res) {
@@ -79,7 +75,6 @@ $(function() {
                 });
             },
               edit: function(item) {
-                console.log(item.id)
                 edit_vue.the_account = item
                 // 显示编辑区域
                 var edit_block = document.getElementById("edit_block");
@@ -117,7 +112,6 @@ $(function() {
                     success:function(data){
                         re=data.success;
                         if(re){
-                            console.log("更新成功");
                             edit_vue.getAllList(edit_vue.currentPage, edit_vue.pageSize);
                             edit_vue.the_account = {};
                             // 隐藏编辑区域
@@ -133,7 +127,6 @@ $(function() {
                 });
               },
               clear: function(evt) {
-                console.log("clear**************")
                 $(".form-control").val("");
                 $.ajax({});
               },

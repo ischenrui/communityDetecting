@@ -1,9 +1,13 @@
 {% extends 'base/admin_base.html' %}
 {% block titlename %}查看用户列表{% endblock %}
 
-{% block main_content %}
+{% block head_src %}
 <!-- 引入样式 -->
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+{% endblock %}
+
+{% block main_content %}
+
 
 <section id="main-content">
   <section class="wrapper">
@@ -119,12 +123,6 @@
 {% endblock %}
 
 {% block js_file %}
-<!-- 引入组件库 -->
-<script src="../static/assets/js/jquery.js"></script>
-<script src="../static/assets/js/jquery-1.8.3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
 <!-- 引入Vue -->
-<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
-<script src="../static/js/element-ui/index.js"></script>
 <script src="../static/js/admin/edit_account.js"></script>
 {% endblock %}

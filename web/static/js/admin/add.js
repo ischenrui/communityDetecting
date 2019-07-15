@@ -72,7 +72,6 @@ var add_account = new Vue({
          },
         reset:function(evt){
             evt.preventDefault();
-            console.log("clear**************")
             $(".form-control").val("")
             $.ajax({});
         },
@@ -86,7 +85,6 @@ var add_account = new Vue({
                 success:function(data){
                     re=data.obj;
                     add_account.a_data = re;
-                    console.log(re);
                  },
                 error:function (res) {
                     console.log("出错");
@@ -97,7 +95,6 @@ var add_account = new Vue({
 
     },
     created:function() {
-        console.log("created******************");
         this.get_data();
     },
     });

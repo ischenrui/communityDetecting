@@ -59,8 +59,8 @@ class dbutil:
             s_list.append("%s")
 
         sql = "insert into %s(%s) VALUES(%s)" % (table, ",".join(column_list), ",".join(s_list))
-        print(sql, value_list)
-        # self.exe_sql(sql, tuple(value_list))
+        # print(sql, value_list)
+        self.exe_sql(sql, tuple(value_list))
 
     def getDics(self, sql, params=None):
         conn = self.POOL.connection()
